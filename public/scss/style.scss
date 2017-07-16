@@ -5,5 +5,9 @@
 
 .container-table {
     margin: 0 auto;
-    max-width: 720px;
+    max-width: 680px;
+}
+
+.collection-item:nth-child(even) {
+    background-color: #f5f5f5;
 }
