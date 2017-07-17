@@ -1,13 +1,70 @@
-.container-nav {
-    margin: 0 auto;
-    max-width: 992px;
+@import "normalise";
+@import "colors";
+@import "typography";
+
+body {
+    background-color: $dark-purple;
 }
 
-.container-table {
+nav, .list-item {
+    background-color: $purple;
     margin: 0 auto;
-    max-width: 680px;
+    height: 80px;
+    width: 520px;
+    padding: 0 8px 0 18px;
+    transition: all 0.6s;
 }
 
-.collection-item:nth-child(even) {
-    background-color: rgba(108, 56, 75, 1.0);
+.container-nav, .container {
+    width: 520px;
+    margin: 0 auto;
+}
+
+.list-item:nth-child(odd) {
+    background-color: $purple;
+}
+
+.list-item:nth-child(even) {
+    background-color: $light-purple;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.nav-left, .nav-right {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+main {
+    height: 100vh;
+    width: 520px;
+    margin: 0 auto;
+    background-color: $light-purple;
+}
+
+.list-item:hover {
+        background-color: $dark-purple;
+}
+
+.outer {   
+    width: 520px;
+    margin: 0 auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+}
+
+.avatar img {
+    width: 60px;
+    height: auto;
+}
+
+.li-text {
+    padding-left: 12px;
 }
