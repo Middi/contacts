@@ -59,22 +59,25 @@ p {
   opacity: 0.8; }
 
 .i-large {
-  font-size: 2rem;
-  padding: 2px 18px 0px 0px; }
+  font-size: 2.2rem;
+  padding: 2px 14px 0px 10px; }
 
 body {
   background-color: #653345; }
 
 nav, .list-item {
-  background-color: #794658;
+  background-color: #814b5f;
   margin: 0 auto;
   height: 80px;
-  width: 520px;
+  max-width: 520px;
   padding: 0 8px 0 18px;
   transition: all 0.6s; }
 
+nav {
+  height: 100px; }
+
 .container-nav, .container {
-  width: 520px;
+  max-width: 520px;
   margin: 0 auto; }
 
 .list-item:nth-child(odd) {
@@ -94,7 +97,7 @@ nav {
       align-content: center; }
 
 .nav-left, .nav-right {
-  height: 80px;
+  height: 94px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,7 +107,7 @@ nav {
 
 main {
   height: 100vh;
-  width: 520px;
+  max-width: 520px;
   margin: 0 auto;
   background-color: #814b5f; }
 
@@ -112,7 +115,7 @@ main {
   background-color: #653345; }
 
 .outer {
-  width: 520px;
+  max-width: 520px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
