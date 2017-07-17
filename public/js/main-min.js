@@ -1,1 +1,1 @@
-$(document).ready(function(){$("#search").click(function(){$("input").slideToggle("slow",function(){})})});
+$(document).ready(function(){$("#search").click(function(){$("input").slideToggle("slow",function(){})}),$(".outer").hover(function(){$(this).toggleClass("outer-move")})});
