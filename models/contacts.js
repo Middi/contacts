@@ -8,5 +8,4 @@ var contactSchema = new mongoose.Schema({
     avatar: String
 });
 
-
 module.exports = mongoose.model('Contact', contactSchema);

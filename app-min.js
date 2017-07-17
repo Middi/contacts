@@ -1,1 +1,61 @@
-const express=require("express"),path=require("path"),app=express(),mongoose=require("mongoose");var passport=require("passport"),LocalStrategy=require("passport-local"),passportLocalMongoose=require("passport-local-mongoose");const bodyParser=require("body-parser");var User=require("./models/user"),routes=require("./routes/index"),port=process.env.PORT||4e3;mongoose.connect("mongodb://Middi:youandme123@ds161022.mlab.com:61022/contacts"),app.set("view engine","ejs"),app.use(express.static(__dirname+"/public")),app.use(bodyParser.urlencoded({extended:!0})),app.use(express.static(path.join(__dirname,"public"))),app.use(require("express-session")({secret:"Table Plate",resave:!1,saveUninitialized:!1})),app.use(passport.initialize()),app.use(passport.session()),passport.use(new LocalStrategy(User.authenticate())),passport.serializeUser(User.serializeUser()),passport.deserializeUser(User.deserializeUser()),app.use(routes),app.use(function(e,s,r){s.locals.currentUser=e.user,r()}),app.listen(port,function(){console.log("server started on port 4000")});
+const express = require('express');
+const path = require('path');
+const app = express();
+const mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local');
+var passportLocalMongoose = require("passport-local-mongoose");
+const bodyParser = require('body-parser');
+var User = require("./models/user");
+
+
+// =====================
+// Require Routes
+// =====================
+var routes = require("./routes/index");
+
+var port = process.env.PORT || 4000;
+
+
+// APP CONFIG
+mongoose.connect("mongodb://Middi:youandme123@ds161022.mlab.com:61022/contacts");
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Set Public Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Table Plate",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(routes);
+
+
+// =====================
+// Check logged in
+// =====================
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   next();
+});
+
+
+// Start Server
+app.listen(port, function () {
+    console.log('server started on port 4000');
+});
+
+

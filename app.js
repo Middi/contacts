@@ -14,7 +14,6 @@ var User = require("./models/user");
 // =====================
 var routes = require("./routes/index");
 
-
 var port = process.env.PORT || 4000;
 
 
@@ -43,6 +42,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use(routes);
+
 
 // =====================
 // Check logged in
