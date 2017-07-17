@@ -180,7 +180,7 @@ main {
 
 .outer {
   max-width: 520px;
-  margin: 0 auto 0 -85px;
+  margin: 0 auto 0 -80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,6 +196,7 @@ main {
 
 .avatar img {
   width: 60px;
+  border-radius: 100%;
   height: auto; }
 
 .li-text {

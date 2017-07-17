@@ -1,1 +1,1 @@
-var mongoose=require("mongoose"),contactSchema=new mongoose.Schema({firstName:String,lastName:String,number:String});module.exports=mongoose.model("Contact",contactSchema);
+var mongoose=require("mongoose"),contactSchema=new mongoose.Schema({firstName:String,lastName:String,number:String,avatar:String});module.exports=mongoose.model("Contact",contactSchema);
