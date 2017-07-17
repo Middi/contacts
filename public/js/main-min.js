@@ -1,1 +1,1 @@
-$(document).ready(function(){$(".button-collapse").sideNav()});
+$(document).ready(function(){$("#search").click(function(){$("input").slideToggle("slow",function(){})})});

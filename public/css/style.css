@@ -66,7 +66,7 @@ i:hover {
   padding: 2px 14px 0px 10px; }
 
 body {
-  background-color: #653345; }
+  background-color: #572c3c; }
 
 nav, .list-item {
   background-color: #814b5f;
@@ -77,7 +77,7 @@ nav, .list-item {
   transition: all 0.6s; }
 
 nav {
-  height: 100px; }
+  height: 90px; }
 
 .container-nav, .container {
   max-width: 520px;
@@ -107,6 +107,66 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
+
+#search-bar {
+  background-color: #814b5f;
+  margin: 0 auto;
+  height: auto;
+  max-width: 520px;
+  padding: 2px 8px 18px 24px;
+  transition: all 0.6s;
+  text-align: center; }
+
+input[type=text] {
+  max-width: 400px;
+  border: none;
+  font-size: 26px;
+  font-weight: 400;
+  padding: 2px 20px 2px 20px;
+  text-transform: uppercase;
+  transition: width 0.4s ease-in-out;
+  background-color: #814b5f;
+  border: 2px solid #6c364a;
+  border-radius: 25px;
+  display: none; }
+
+input[type=text]:focus {
+  outline: none; }
+
+::-webkit-input-placeholder {
+  color: #c79ead;
+  text-transform: capitalize; }
+
+:-moz-placeholder {
+  color: #c79ead;
+  text-transform: capitalize;
+  opacity: 1; }
+
+::-moz-placeholder {
+  color: #c79ead;
+  text-transform: capitalize;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  color: #c79ead;
+  text-transform: capitalize; }
+
+input {
+  -webkit-appearance: none; }
+
+button, input[type=submit] {
+  display: inline;
+  margin: 20px 10px;
+  padding: 6px 14px;
+  font-weight: 200;
+  border-radius: 2px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  border: 1px solid #010101;
+  background-color: rgba(26, 33, 69, 0.4); }
+  button:hover, input[type=submit]:hover {
+    background-color: rgba(26, 33, 69, 0.7); }
 
 main {
   height: 100vh;

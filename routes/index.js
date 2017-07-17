@@ -2,14 +2,30 @@ var express = require("express");
 var router = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
+var Contact = require("../models/contacts");
 var middleware = require("../middleware");
 
 
-// Root route
-router.get('/', function(req, res){
-   res.render("index"); 
-});
+// // Root route
+// router.get('/', function(req, res){
+//    res.render("index"); 
+// });
 
+// INDEX ROUTE Show all campgrounds
+router.get('/', function(req, res){
+    //get campgrounds from DB
+    Contact.find({}, function(err, allContacts){
+        if(err){
+            console.log(err);
+        }
+        else {
+            
+            res.render('index', {
+                contact: allContacts
+            });
+        }
+    });
+});
 
 
 // ======================

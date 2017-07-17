@@ -1,6 +1,7 @@
-$( document ).ready(function(){
-
-    $(".button-collapse").sideNav();
-    // $('.collection-item:visible:odd').addClass('odd');
-    // $('.collection-item:visible:even').css({'background-color': 'yellow'});
+$(document).ready(function() {
+    $('#search').click(function() {
+            $( "input" ).slideToggle( "slow", function() {
+    // Animation complete.
+  });
+    });
 });

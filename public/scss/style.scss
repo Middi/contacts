@@ -3,7 +3,7 @@
 @import "typography";
 
 body {
-    background-color: $dark-purple;
+    background-color: darken($dark-purple, 4);
 }
 
 nav, .list-item {
@@ -16,7 +16,7 @@ nav, .list-item {
 }
 
 nav {
-    height: 100px;
+    height: 90px;
 }
 
 .container-nav, .container {
@@ -42,6 +42,83 @@ nav {
     height: 94px;
     display: flex;
     align-items: center;
+}
+
+#search-bar {
+    background-color: $light-purple;
+    margin: 0 auto;
+    height: auto;
+    max-width: 520px;
+    padding: 2px 8px 18px 24px;
+    transition: all 0.6s;
+    text-align: center;
+}
+
+
+input[type=text] {
+	max-width: 		400px;
+	border: 		 none;
+	font-size: 		 26px;
+	font-weight: 	  400;
+	padding:   	 2px 20px 2px 20px;
+	text-transform: 	 uppercase;
+	transition: 			 width 0.4s ease-in-out;
+	background-color: 		$light-purple;
+    border: 2px solid lighten($dark-purple, 2);
+    border-radius: 25px;
+    display: none;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+
+// ---- Placeholder Text ---- //
+
+::-webkit-input-placeholder {
+	color: lighten($light-purple, 30);
+	text-transform:        capitalize;
+}
+
+:-moz-placeholder {
+	color: lighten($light-purple, 30);
+	text-transform:        capitalize;
+	opacity: 	   		        	1;
+}
+
+::-moz-placeholder {
+	color: lighten($light-purple, 30);
+	text-transform:        capitalize;
+	opacity: 	 		            1;
+}
+
+:-ms-input-placeholder {
+	color: lighten($light-purple, 30);
+	text-transform:        capitalize;
+}
+
+
+// ---- Remove IOS Standard Styles ---- //
+
+input {-webkit-appearance: none;}
+
+
+// ---- Button Styles ---- //
+
+button, input[type=submit] {
+	display: 	inline;
+	margin:  20px 10px;
+	padding:  6px 14px;
+	font-weight:   200;
+	border-radius: 2px;
+	font-size: 	  16px;
+	cursor:    pointer;
+	transition: all 0.6s ease;
+	border:    1px solid #010101;
+	background-color: rgba(26, 33, 69, 0.4);
+	
+	&:hover {background-color: rgba(26, 33, 69, 0.7);}
 }
 
 main {

@@ -1,0 +1,1 @@
+var express=require("express"),router=express.Router(),passport=require("passport"),User=require("../models/user"),Contact=require("../models/contacts"),middleware=require("../middleware");router.get("/",function(e,r){Contact.find({},function(e,o){e?console.log(e):r.render("index",{contact:o})})}),module.exports=router;
