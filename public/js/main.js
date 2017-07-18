@@ -5,6 +5,11 @@ $(document).ready(function() {
       });
     });
 
+    $('#add').click(function() {
+            $("#add-bar").slideToggle("slow", function() { 
+            });
+    });
+
 
   $(".outer").hover(function() {
 			$(this).toggleClass("outer-move");
