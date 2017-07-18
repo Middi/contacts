@@ -1,14 +1,12 @@
 $(document).ready(function() {
     $('#search').click(function() {
-            $( "input" ).slideToggle( "slow", function() {
-    // Animation complete.
+      $("#search-bar").toggleClass("pad");
+            $("input").slideToggle("slow", function() { 
       });
     });
 
 
-    // --- On Enter Key --- //
   $(".outer").hover(function() {
-			// --- Make Search Bar Move Up --- //
 			$(this).toggleClass("outer-move");
   });
 

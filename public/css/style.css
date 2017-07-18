@@ -114,9 +114,12 @@ nav {
   margin: 0 auto;
   height: auto;
   max-width: 520px;
-  padding: 2px 8px 18px 24px;
   transition: all 0.6s;
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
+
+.pad {
+  padding: 2px 0px 18px 0px; }
 
 input[type=text] {
   max-width: 400px;
