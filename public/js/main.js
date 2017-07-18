@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#search').click(function() {
       $("#search-bar").toggleClass("pad");
-            $("input").slideToggle("slow", function() { 
+            $("#search-input").slideToggle("slow", function() { 
       });
     });
 

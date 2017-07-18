@@ -59,7 +59,17 @@ nav {
     padding: 2px 0px 18px 0px;
 }
 
-input[type=text] {
+#add-bar {
+    background-color: $light-purple;
+    margin: 0 auto;
+    height: auto;
+    max-width: 520px;
+    transition: all 0.6s;
+    text-align: center;
+    overflow: hidden;
+}
+
+#search-bar > input[type=text] {
 	max-width: 		400px;
 	border: 		 none;
 	font-size: 		 26px;
