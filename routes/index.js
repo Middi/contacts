@@ -1,10 +1,14 @@
 var express = require("express");
 var router = express.Router();
+var multer = require('multer');
+var upload = multer({ dest: 'uploads/' })
 var passport = require("passport");
 var User = require("../models/user");
 var Contact = require("../models/contacts");
 var middleware = require("../middleware");
 
+// File Name extension for Multer
+var ext = "";
 
 // INDEX ROUTE Show all contacts
 router.get('/', function(req, res){
@@ -22,12 +26,13 @@ router.get('/', function(req, res){
 });
 
 
-// CREATE - Add new campground to database
-router.post('/', function(req, res){
+// CREATE - Add new contact to database
+router.post('/', upload.single('avatar'), function (req, res, next){
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var number = req.body.number;
-    var avatar = req.body.avatar;
+    var avatar = req.file.path;
+    ext = req.file.mimetype.replace("image/", ".");
     var newContact = {firstName: firstName, lastName: lastName, number: number, avatar: avatar};
 
     Contact.create(newContact, function(err, newlyCreated){
@@ -87,6 +92,17 @@ router.post('/', function(req, res){
 // //    req.flash("success", "logged you out");
 //    res.redirect('/');
 // });
+
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + ext);
+  }
+});
+
 
 
 module.exports = router;
