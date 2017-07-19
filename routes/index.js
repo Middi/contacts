@@ -35,14 +35,19 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     ext = req.file.mimetype.replace("image/", ".");
     var newContact = {firstName: firstName, lastName: lastName, number: number, avatar: avatar};
 
-    Contact.create(newContact, function(err, newlyCreated){
-        if(err) {
-            console.log(err);
-        }
-        else {
-            res.redirect('/');
-        }
-    });
+    if(ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
+        Contact.create(newContact, function(err, newlyCreated){
+            if(err) {
+                console.log(err);
+            }
+            else {
+                res.redirect('/');
+            }
+        });
+    }
+    else {
+        res.send('File type not supported, use .jpg or .png. Click back to try again');
+    }
     
 });
 
