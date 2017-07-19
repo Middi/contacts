@@ -4,6 +4,8 @@
                 <h5>A</h5>
             </li> -->
 
+        <span class="flag-icon flag-icon-pl"></span>
+        
             <% contact.forEach(function(contact) { %>
                 <li class="list-item">
                     <div class="outer">
@@ -12,8 +14,10 @@
                         </div>
                         <div class="li-text">
                             <h2><%= contact.firstName %> <%= contact.lastName %></h2>
-                            <p>Work</p>
-                            <!-- <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a> -->
+                            <p><%= contact.number %></p>
+                        </div>
+                        <div class="flag">
+                            <a href="#!"><i class="material-icons">grade</i></a>
                         </div>
                     </div>
                 </li>
@@ -21,5 +25,6 @@
              <% }); %>
 
         </ul>
+
         
 <% include ./partials/footer %>

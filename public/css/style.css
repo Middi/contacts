@@ -179,7 +179,7 @@ main {
 
 .outer {
   max-width: 520px;
-  margin: 0 auto 0 -80px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -190,13 +190,16 @@ main {
   cursor: pointer;
   transition: margin 0.8s ease; }
 
-.outer-move {
-  margin: 0 auto 0 0; }
-
 .avatar img {
   width: 60px;
   border-radius: 100%;
   height: 60px; }
 
 .li-text {
-  padding-left: 22px; }
+  padding-left: 22px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.flag {
+  padding: 8px; }

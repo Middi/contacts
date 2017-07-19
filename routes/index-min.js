@@ -49,7 +49,6 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     else {
         res.send('File type not supported, use .jpg or .png. Click back to try again');
     }
-    
 });
 
 

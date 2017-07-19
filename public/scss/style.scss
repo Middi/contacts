@@ -132,16 +132,12 @@ main {
 
 .outer {   
     max-width: 520px;
-    margin: 0 auto 0 -80px;
+    margin: 0 auto;
     display: flex;
     height: 100%;
     align-items: center;
     cursor: pointer;
 	transition: margin 0.8s ease;
-}
-
-.outer-move {
-    margin: 0 auto 0 0;
 }
 
 .avatar img {
@@ -152,4 +148,9 @@ main {
 
 .li-text {
     padding-left: 22px;
+    flex-grow: 1;
+}
+
+.flag {
+    padding: 8px;
 }
