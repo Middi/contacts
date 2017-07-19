@@ -103,7 +103,7 @@ nav {
         font-weight: 	400;
         margin:         6px;
         border-radius: 25px;
-        padding:   4px 20px;
+        padding:   6px 20px;
 
         transition:         width 0.4s ease-in-out;
         background-color: 		     $light-purple;
@@ -121,16 +121,24 @@ nav {
     }
 }
 
+
+#file {
+    padding: 20px 0 0 0;
+}
+
+
 button {
-    background-color: $purple;
+    background-color: $light-purple;
     border: 2px solid $dark-purple;
     padding: 8px 24px;
     font-size: 16px;
     border-radius: 10px;
     margin: 18px;
     color: lighten($light-purple, 40);
+    transition: all 0.3s;
+
     &:hover {
-        background-color: $light-purple;
+        background-color: $purple;
         color: lighten($light-purple, 50);
     }
 }

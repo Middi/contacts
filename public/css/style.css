@@ -160,7 +160,7 @@ nav {
     font-weight: 400;
     margin: 6px;
     border-radius: 25px;
-    padding: 4px 20px;
+    padding: 6px 20px;
     transition: width 0.4s ease-in-out;
     background-color: #814b5f;
     border: 2px solid #6c364a; }
@@ -171,16 +171,20 @@ nav {
     border: none;
     margin: 12px; }
 
+#file {
+  padding: 20px 0 0 0; }
+
 button {
-  background-color: #794658;
+  background-color: #814b5f;
   border: 2px solid #653345;
   padding: 8px 24px;
   font-size: 16px;
   border-radius: 10px;
   margin: 18px;
-  color: #dabfc9; }
+  color: #dabfc9;
+  transition: all 0.3s; }
   button:hover {
-    background-color: #814b5f;
+    background-color: #794658;
     color: #ecdfe4; }
 
 ::-webkit-input-placeholder {
