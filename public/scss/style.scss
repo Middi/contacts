@@ -181,8 +181,13 @@ main {
     background-color: $light-purple;
 }
 
+ul {
+    background-color: $light-purple;
+    padding-bottom: 80px;
+}
+
 .list-item:hover {
-        background-color: $dark-purple;
+    background-color: $dark-purple;
 }
 
 .outer {   
@@ -209,3 +214,4 @@ main {
 .flag {
     padding: 8px;
 }
+

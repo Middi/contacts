@@ -214,6 +214,10 @@ main {
   margin: 0 auto;
   background-color: #814b5f; }
 
+ul {
+  background-color: #814b5f;
+  padding-bottom: 80px; }
+
 .list-item:hover {
   background-color: #653345; }
 
