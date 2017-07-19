@@ -169,7 +169,8 @@ nav {
       outline: none; }
   #add-form input[type=file] {
     border: none;
-    margin: 12px; }
+    font-size: 12px;
+    margin: 12px 0 12px 62px; }
 
 #file {
   padding: 20px 0 0 0; }
