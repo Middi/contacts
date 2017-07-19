@@ -1,3 +1,4 @@
+var cloudinary = require('cloudinary');
 var express = require("express");
 var router = express.Router();
 var multer = require('multer');
