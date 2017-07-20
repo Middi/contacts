@@ -9,7 +9,7 @@
 h1 {
     font-weight: 300;
     font-size: 2.8rem;
-	color: darken($dark-brand, 30);
+	color: $text;
 }
 
 h2 {
@@ -23,11 +23,11 @@ p {
 }
 
 i:hover {
-    color: darken($text, 100);
+	color: $text;
 }
 
 .i-large {
     font-size: 2.2rem;
     padding: 2px 14px 0px 10px;
-	color: darken($dark-brand, 30);
+	color: darken($text, 10);
 }

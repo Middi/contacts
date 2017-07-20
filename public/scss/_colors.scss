@@ -1,5 +1,5 @@
-$light-brand: rgba(196, 219, 236, 1.0);
-$brand      : rgba(141, 178, 203, 1.0);
-$dark-brand : rgba(103, 142, 167, 1.0);
-$back       : rgba(175, 175, 175, 1.0);
-$text       : rgba(24, 24, 24, 1.0);
+$light-brand: rgba(128, 76, 95, 1.0);
+$brand      : darken(rgba(120, 71, 88, 1.0),4);
+$dark-brand : darken(rgba(101, 51, 69, 1.0),4);
+$back       : darken($dark-brand, 2);
+$text       : rgba(252, 252, 252, 1.0);
