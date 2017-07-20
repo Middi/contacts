@@ -15,9 +15,21 @@ nav, .list-item {
     overflow: hidden;
 }
 
+
 nav {
     height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 0 8px 0 18px;
 }
+
+.nav-left, .nav-right {
+    height: 94px;
+    display: flex;
+    align-items: center;
+}
+
 
 .list-item {
     display: flex;
@@ -39,18 +51,6 @@ nav {
 
 .list-item:nth-child(even) {
     background-color: $light-brand;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-}
-
-.nav-left, .nav-right {
-    height: 94px;
-    display: flex;
-    align-items: center;
 }
 
 #search-bar {
