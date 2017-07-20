@@ -5,7 +5,7 @@
             </li> -->
         
             <% contact.forEach(function(contact) { %>
-                <li class="list-item">
+                <li class="list-item hide">
                     <div class="outer">
                         <div class="avatar">
                             <img src="<%= contact.avatar %>">
@@ -17,6 +17,10 @@
                         <div class="flag">
                             <span class="flag-icon flag-icon-gb"></span>
                         </div>
+                    </div>
+                    <div class="action hide">
+                        <button>edit</button>
+                        <button>delete</button>
                     </div>
                 </li>  
              <% }); %>

@@ -75,12 +75,27 @@ nav, .list-item {
   margin: 0 auto;
   height: 80px;
   max-width: 520px;
-  padding: 0 8px 0 18px;
   transition: all 0.6s;
   overflow: hidden; }
 
 nav {
   height: 100px; }
+
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 80px; }
+
+.hide {
+  height: 80px; }
 
 .container-nav, .container {
   max-width: 520px;
@@ -234,6 +249,7 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+  padding: 0 8px 0 18px;
   transition: margin 0.8s ease; }
 
 .avatar img {
@@ -249,3 +265,22 @@ ul {
 
 .flag {
   padding: 8px; }
+
+.action {
+  text-align: center;
+  height: 60px;
+  width: 100%;
+  background-color: #46897b;
+  display: none; }
+  .action button {
+    background-color: #46897b;
+    border: 2px solid #7cd5c1;
+    padding: 4px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    margin: 18px;
+    color: #cbf0e9;
+    transition: all 0.3s; }
+    .action button:hover {
+      background-color: #58aa99;
+      color: #fafefd; }
