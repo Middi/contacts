@@ -97,31 +97,9 @@ nav {
       -ms-flex-align: center;
           align-items: center; }
 
-.list-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: auto; }
-
 .container-nav, .container {
   max-width: 520px;
   margin: 0 auto; }
-
-li:nth-child(odd) {
-  background: #6b3f4f; }
-
-li:nth-child(even) {
-  background: #804c5f; }
-
-li:nth-last-child(1) {
-  box-shadow: 0 2px 12px 0 #572c3c; }
 
 #search-bar {
   background-color: #804c5f;
@@ -226,6 +204,28 @@ main {
 ul {
   background-color: #804c5f;
   padding-bottom: 80px; }
+
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: auto; }
+
+li:nth-child(odd) {
+  background: #6b3f4f; }
+
+li:nth-child(even) {
+  background: #804c5f; }
+
+li:nth-last-child(1) {
+  box-shadow: 0 2px 12px 0 #572c3c; }
 
 .list-item:hover {
   background-color: #572c3c; }
