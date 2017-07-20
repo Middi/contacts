@@ -3,11 +3,11 @@
 @import "typography";
 
 body {
-    background-color: darken($dark-purple, 4);
+    background-color: darken($dark-brand, 4);
 }
 
 nav, .list-item {
-    background-color: $light-purple;
+    background-color: $light-brand;
     margin: 0 auto;
     height: 80px;
     max-width: 520px;
@@ -17,7 +17,7 @@ nav, .list-item {
 }
 
 nav {
-    height: 90px;
+    height: 100px;
 }
 
 .container-nav, .container {
@@ -26,11 +26,11 @@ nav {
 }
 
 .list-item:nth-child(odd) {
-    background-color: $purple;
+    background-color: $brand;
 }
 
 .list-item:nth-child(even) {
-    background-color: $light-purple;
+    background-color: $light-brand;
 }
 
 nav {
@@ -46,7 +46,7 @@ nav {
 }
 
 #search-bar {
-    background-color: $light-purple;
+    background-color: $light-brand;
     margin: 0 auto;
     height: auto;
     max-width: 520px;
@@ -56,7 +56,7 @@ nav {
 }
 
 .pad {
-    padding: 2px 0px 18px 0px;
+    padding: 4px 0px 28px 0px;
 }
 
 #search-bar > input[type=text] {
@@ -67,14 +67,14 @@ nav {
     border-radius:   25px;
     display:         none;
 	padding:   	  2px 20px 2px 20px;
-    background-color: $light-purple;
+    background-color: $light-brand;
     
 	transition:         width 0.4s ease-in-out;
-    border: 2px solid lighten($dark-purple, 2);
+    border: 2px solid lighten($dark-brand, 2);
 
     &:focus {
         outline: none;
-        background-color: lighten($light-purple, 4);
+        background-color: lighten($light-brand, 4);
     }
 }
 
@@ -83,7 +83,7 @@ nav {
 }
 
 #add-bar {
-    background-color: $light-purple;
+    background-color: $light-brand;
     margin: 0 auto;
     height: auto;
     max-width: 520px;
@@ -107,11 +107,11 @@ nav {
         padding:   6px 20px;
 
         transition:         width 0.4s ease-in-out;
-        background-color: 		     $light-purple;
-        border: 2px solid lighten($dark-purple, 2);
+        background-color: 		     $light-brand;
+        border: 2px solid lighten($dark-brand, 2);
 
         &:focus {
-            background-color: lighten($light-purple, 4);
+            background-color: lighten($light-brand, 4);
             outline: none;
         }
     }
@@ -130,18 +130,18 @@ nav {
 
 
 button {
-    background-color: $light-purple;
-    border: 2px solid $dark-purple;
+    background-color: $brand;
+    border: 2px solid $dark-brand;
     padding: 8px 24px;
     font-size: 16px;
     border-radius: 10px;
     margin: 18px;
-    color: lighten($light-purple, 40);
+	color: darken($dark-brand, 30);
     transition: all 0.3s;
 
     &:hover {
-        background-color: $purple;
-        color: lighten($light-purple, 50);
+        background-color: $dark-brand;
+        color: lighten($light-brand, 20);
     }
 }
 
@@ -149,24 +149,24 @@ button {
 // ---- Placeholder Text ---- //
 
 ::-webkit-input-placeholder {
-	color: lighten($light-purple, 30);
+	color: darken($dark-brand, 20);
 	text-transform:        capitalize;
 }
 
 :-moz-placeholder {
-	color: lighten($light-purple, 30);
+	color: darken($dark-brand, 20);
 	text-transform:        capitalize;
 	opacity: 	   		        	1;
 }
 
 ::-moz-placeholder {
-	color: lighten($light-purple, 30);
+	color: darken($dark-brand, 20);
 	text-transform:        capitalize;
 	opacity: 	 		            1;
 }
 
 :-ms-input-placeholder {
-	color: lighten($light-purple, 30);
+	color: darken($dark-brand, 20);
 	text-transform:        capitalize;
 }
 
@@ -180,16 +180,16 @@ main {
     height: 100vh;
     max-width: 520px;
     margin: 0 auto;
-    background-color: $light-purple;
+    background-color: $light-brand;
 }
 
 ul {
-    background-color: $light-purple;
+    background-color: $light-brand;
     padding-bottom: 80px;
 }
 
 .list-item:hover {
-    background-color: $dark-purple;
+    background-color: $dark-brand;
 }
 
 .outer {   
