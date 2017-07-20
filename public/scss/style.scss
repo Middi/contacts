@@ -184,6 +184,7 @@ ul {
 li:nth-child(odd) { background: $brand }
 li:nth-child(even) { background: $light-brand }
 li:nth-last-child(1) { 
+    border-bottom: 2px solid $dark-brand;
 	-webkit-box-shadow: 0 2px 12px 0 $dark-brand;
 	   -moz-box-shadow: 0 2px 12px 0 $dark-brand;
             box-shadow: 0 2px 12px 0 $dark-brand;

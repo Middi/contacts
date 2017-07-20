@@ -225,6 +225,7 @@ li:nth-child(even) {
   background: #804c5f; }
 
 li:nth-last-child(1) {
+  border-bottom: 2px solid #572c3c;
   box-shadow: 0 2px 12px 0 #572c3c; }
 
 .list-item:hover {
