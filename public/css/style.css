@@ -126,16 +126,15 @@ nav {
   border: none;
   font-size: 26px;
   font-weight: 400;
-  padding: 2px 20px 2px 20px;
-  text-transform: uppercase;
-  transition: width 0.4s ease-in-out;
-  background-color: #814b5f;
-  border: 2px solid #6c364a;
   border-radius: 25px;
-  display: none; }
+  display: none;
+  padding: 2px 20px 2px 20px;
+  background-color: #814b5f;
+  transition: width 0.4s ease-in-out;
+  border: 2px solid #6c364a; }
   #search-bar > input[type=text]:focus {
-    background-color: #8e5369;
-    outline: none; }
+    outline: none;
+    background-color: #8e5369; }
 
 #search-bar > input[type=text]:focus {
   outline: none; }

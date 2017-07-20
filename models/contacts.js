@@ -6,6 +6,7 @@ var contactSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
     number: String,
+    country: String,
     avatar: String
 });
 

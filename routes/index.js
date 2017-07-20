@@ -1,4 +1,5 @@
 var cloudinary = require('cloudinary');
+var countries = require('country-data').countries;
 var express = require("express");
 var router = express.Router();
 var multer = require('multer');
@@ -32,9 +33,10 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var number = req.body.number;
+    var country = req.body.country;
     var avatar = req.file.path;
     ext = req.file.mimetype.replace("image/", ".");
-    var newContact = {firstName: firstName, lastName: lastName, number: number, avatar: avatar};
+    var newContact = {firstName: firstName, lastName: lastName, number: number, country: country, avatar: avatar};
 
     if(ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
         Contact.create(newContact, function(err, newlyCreated){

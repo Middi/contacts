@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var multer  = require('multer');
+var countries = require('country-data').countries;
 var upload = multer({ dest: 'uploads/' });
 var app = express();
 var mongoose = require('mongoose');
@@ -24,7 +25,6 @@ mongoose.connect("mongodb://Middi:youandme123@ds161022.mlab.com:61022/contacts")
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
-
 
 // Set Public Folder
 app.use(express.static(path.join(__dirname, 'public')));

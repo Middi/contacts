@@ -64,16 +64,17 @@ nav {
 	border: 		 none;
 	font-size: 		 26px;
 	font-weight: 	  400;
-	padding:   	 2px 20px 2px 20px;
-	text-transform: 	 uppercase;
-	transition: 			 width 0.4s ease-in-out;
-	background-color: 		$light-purple;
+    border-radius:   25px;
+    display:         none;
+	padding:   	  2px 20px 2px 20px;
+    background-color: $light-purple;
+    
+	transition:         width 0.4s ease-in-out;
     border: 2px solid lighten($dark-purple, 2);
-    border-radius: 25px;
-    display: none;
+
     &:focus {
-        background-color: lighten($light-purple, 4);
         outline: none;
+        background-color: lighten($light-purple, 4);
     }
 }
 
