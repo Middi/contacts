@@ -68,7 +68,7 @@ i:hover {
   color: #2b3e4a; }
 
 body {
-  background-color: #5c849e; }
+  background-color: #afafaf; }
 
 nav, .list-item {
   background-color: #c4dbec;
@@ -188,11 +188,10 @@ button {
   font-size: 16px;
   border-radius: 10px;
   margin: 18px;
-  color: #2b3e4a;
+  color: white;
   transition: all 0.3s; }
   button:hover {
-    background-color: #678ea7;
-    color: white; }
+    background-color: #678ea7; }
 
 ::-webkit-input-placeholder {
   color: #3e596a;
@@ -253,21 +252,21 @@ ul {
 .flag {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
-      align-self: center; }
+      align-self: center;
+  padding: 0 8px;
+  margin: 0px auto 8px; }
 
 .action {
   text-align: center;
   height: 80px;
   overflow: hidden;
-  width: 100%;
-  background-color: #50748b; }
+  background-color: #47667b; }
   .action button {
-    background-color: #50748b;
+    background-color: #47667b;
     border: 1px solid #8db2cb;
     padding: 6px 18px;
     font-size: 16px;
     border-radius: 6px;
-    margin: 18px;
     color: #e3eef6;
     transition: all 0.3s; }
     .action button:hover {

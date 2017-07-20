@@ -3,7 +3,7 @@
 @import "typography";
 
 body {
-    background-color: darken($dark-brand, 4);
+    background-color: $back;
 }
 
 nav, .list-item {
@@ -136,12 +136,11 @@ button {
     font-size: 16px;
     border-radius: 10px;
     margin: 18px;
-	color: darken($dark-brand, 30);
+	color: lighten($light-brand, 30);
     transition: all 0.3s;
 
     &:hover {
         background-color: $dark-brand;
-        color: lighten($light-brand, 20);
     }
 }
 
@@ -215,6 +214,8 @@ ul {
 
 .flag {
     align-self: center;
+    padding: 0 8px;
+    margin: 0px auto 8px;
 }
 
 
@@ -224,15 +225,13 @@ ul {
     text-align: center;
     height: 80px;
     overflow: hidden;
-    width: 100%;
-    background-color: darken($dark-brand,10);
+    background-color: darken($dark-brand, 15);
     button {
-        background-color: darken($dark-brand,10);
+        background-color: darken($dark-brand, 15);
         border: 1px solid $brand;
         padding: 6px 18px;
         font-size: 16px;
         border-radius: 6px;
-        margin: 18px;
         color: lighten($light-brand, 8);
         transition: all 0.3s;
 

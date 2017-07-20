@@ -1,6 +1,8 @@
 $(document).ready(function () {
 
-    // Search bar reveal
+  // ================
+  // Search bar reveal
+  // ================
   $('#search').click(function () {
     if ($("#search-bar").hasClass('hide')) {
         $("#search-bar").show().removeClass('hide');
@@ -8,9 +10,14 @@ $(document).ready(function () {
     else {
         $("#search-bar").fadeOut().addClass('hide');
     }
+        $('#search-input').val("");
+        filterNames();
   });
 
 
+  // ================
+  // Add new contact bar reveal
+  // ================
   $('#add').click(function () {
     if ($("#add-bar").hasClass('hide')) {
         $("#add-bar").show().removeClass('hide');
@@ -20,39 +27,28 @@ $(document).ready(function () {
     }
   });
 
-  // Options bar reveal
+  // ================
+  // Contacts edit/delete bar reveal
+  // ================
+
   $('.list-item').click(function () {
     if ($(this).children('.action').hasClass('hide')) {
-      
         $(this).children('.action').show().removeClass('hide');
 
-    } else {
-      
+    }
+      else {
         $(this).children('.action').fadeOut().addClass('hide');
- 
     }
   });
 
-  // // Options bar reveal
-  // $('.list-item').click(function () {
-  //   if ($(this).children('.action').hasClass('hide')) {
-  //     $(this).animate({ height: 140 }, 200, function () {
 
-  //       $(this).children('.action').fadeIn().removeClass('hide');
-
-  //     });
-  //   } else {
-  //     $(this).animate({ height: 80 }, 200, function () {
-  //       $(this).children('.action').fadeOut().addClass('hide');
-  //     });
-  //   }
-  // });
-
-
+  // ================
   // Search function
+  // ================
   
+
   // get element and add eventlistener
-  var filterInput = document.getElementById('search-input').addEventListener('keyup', filterNames);
+  document.getElementById('search-input').addEventListener('keyup', filterNames);
 
 
   function filterNames() {
@@ -71,6 +67,6 @@ $(document).ready(function () {
         li[i].style.display = 'none';
       }
     }
-  };
+  }
 });
 
