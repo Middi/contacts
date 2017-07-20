@@ -114,11 +114,11 @@ nav {
   max-width: 520px;
   margin: 0 auto; }
 
-.list-item:nth-child(odd) {
-  background-color: #8db2cb; }
+li:nth-child(odd) {
+  background: #8db2cb; }
 
-.list-item:nth-child(even) {
-  background-color: #c4dbec; }
+li:nth-child(even) {
+  background: #c4dbec; }
 
 #search-bar {
   background-color: #c4dbec;
@@ -275,4 +275,7 @@ ul {
 
 .hide {
   height: 0;
+  display: none; }
+
+.hidden {
   display: none; }

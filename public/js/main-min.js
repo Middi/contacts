@@ -5,13 +5,13 @@ $(document).ready(function () {
   // ================
   $('#search').click(function () {
     if ($("#search-bar").hasClass('hide')) {
-        $("#search-bar").show().removeClass('hide');
+      $("#search-bar").show().removeClass('hide');
     }
     else {
-        $("#search-bar").fadeOut().addClass('hide');
+      $("#search-bar").fadeOut().addClass('hide');
     }
-        $('#search-input').val("");
-        filterNames();
+    $('#search-input').val("");
+    filterNames();
   });
 
 
@@ -20,10 +20,10 @@ $(document).ready(function () {
   // ================
   $('#add').click(function () {
     if ($("#add-bar").hasClass('hide')) {
-        $("#add-bar").show().removeClass('hide');
+      $("#add-bar").show().removeClass('hide');
     }
     else {
-        $("#add-bar").fadeOut().addClass('hide');
+      $("#add-bar").fadeOut().addClass('hide');
     }
   });
 
@@ -33,11 +33,11 @@ $(document).ready(function () {
 
   $('.list-item').click(function () {
     if ($(this).children('.action').hasClass('hide')) {
-        $(this).children('.action').show().removeClass('hide');
+      $(this).children('.action').show().removeClass('hide');
 
     }
-      else {
-        $(this).children('.action').fadeOut().addClass('hide');
+    else {
+      $(this).children('.action').fadeOut().addClass('hide');
     }
   });
 
@@ -45,7 +45,7 @@ $(document).ready(function () {
   // ================
   // Search function
   // ================
-  
+
 
   // get element and add eventlistener
   document.getElementById('search-input').addEventListener('keyup', filterNames);
@@ -65,8 +65,27 @@ $(document).ready(function () {
       }
       else {
         li[i].style.display = 'none';
+        stripes();
       }
     }
   }
+
+
+  function stripes() {
+    var trs = document.getElementsByTagName("li"),
+      count = 0;
+
+    for (var i = 0; i < trs.length; i++) {
+      if (!trs[i].classList.contains("hidden") && (count++) % 2 === 0) {
+        trs[i].style.background = "$dark-brand";
+      }
+      else if (!trs[i].classList.contains("hidden")) {
+        trs[i].style.background = "$brand";
+      }
+    }
+  }
+
+
+  stripes();
 });
 

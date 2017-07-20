@@ -42,13 +42,12 @@ nav {
     margin: 0 auto;
 }
 
-.list-item:nth-child(odd) {
-    background-color: $brand;
-}
+// .list-item {
+//     background-color: $brand;
+// }
 
-.list-item:nth-child(even) {
-    background-color: $light-brand;
-}
+li:nth-child(odd) { background: $brand; }
+li:nth-child(even) { background: $light-brand }
 
 #search-bar {
     background-color: $light-brand;
@@ -248,3 +247,5 @@ ul {
     height: 0; 
     display: none;
 }
+
+.hidden { display:none; }
