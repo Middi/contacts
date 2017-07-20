@@ -12,6 +12,19 @@ var middleware = require("../middleware");
 // File Name extension for Multer
 var ext = "";
 
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/'); // Absolute path. Folder must exist, will not be created for you.
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now());
+  }
+});
+
+var upload = multer({ storage: storage });
+
+
+
 // INDEX ROUTE Show all contacts
 router.get('/', function(req, res){
     //get contacts from DB
@@ -34,8 +47,8 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     var lastName = req.body.lastName;
     var number = req.body.number;
     var country = req.body.country;
-    var avatar = req.file.path;
     ext = req.file.mimetype.replace("image/", ".");
+    var avatar = req.file.path+ext;
     var newContact = {firstName: firstName, lastName: lastName, number: number, country: country, avatar: avatar};
 
     if(ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
@@ -99,17 +112,6 @@ router.post('/', upload.single('avatar'), function (req, res, next){
 // //    req.flash("success", "logged you out");
 //    res.redirect('/');
 // });
-
-
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + ext);
-  }
-});
-
 
 
 module.exports = router;

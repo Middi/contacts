@@ -49,7 +49,7 @@ input, select {
 h1 {
   font-weight: 300;
   font-size: 2.8rem;
-  color: #23463f; }
+  color: #2b3e4a; }
 
 h2 {
   font-size: 1.4rem;
@@ -65,13 +65,13 @@ i:hover {
 .i-large {
   font-size: 2.2rem;
   padding: 2px 14px 0px 10px;
-  color: #23463f; }
+  color: #2b3e4a; }
 
 body {
-  background-color: #509d8d; }
+  background-color: #5c849e; }
 
 nav, .list-item {
-  background-color: #abe7db;
+  background-color: #c4dbec;
   margin: 0 auto;
   height: 80px;
   max-width: 520px;
@@ -120,13 +120,13 @@ nav {
   margin: 0 auto; }
 
 .list-item:nth-child(odd) {
-  background-color: #7cd5c1; }
+  background-color: #8db2cb; }
 
 .list-item:nth-child(even) {
-  background-color: #abe7db; }
+  background-color: #c4dbec; }
 
 #search-bar {
-  background-color: #abe7db;
+  background-color: #c4dbec;
   margin: 0 auto;
   height: auto;
   max-width: 520px;
@@ -145,18 +145,18 @@ nav {
   border-radius: 25px;
   display: none;
   padding: 2px 20px 2px 20px;
-  background-color: #abe7db;
+  background-color: #c4dbec;
   transition: width 0.4s ease-in-out;
-  border: 2px solid #5fad9d; }
+  border: 2px solid #6d93ab; }
   #search-bar > input[type=text]:focus {
     outline: none;
-    background-color: #bbece2; }
+    background-color: #d3e4f1; }
 
 #search-bar > input[type=text]:focus {
   outline: none; }
 
 #add-bar {
-  background-color: #abe7db;
+  background-color: #c4dbec;
   margin: 0 auto;
   height: auto;
   max-width: 520px;
@@ -177,10 +177,10 @@ nav {
     border-radius: 25px;
     padding: 6px 20px;
     transition: width 0.4s ease-in-out;
-    background-color: #abe7db;
-    border: 2px solid #5fad9d; }
+    background-color: #c4dbec;
+    border: 2px solid #6d93ab; }
     #add-form input[type=text]:focus {
-      background-color: #bbece2;
+      background-color: #d3e4f1;
       outline: none; }
   #add-form input[type=file] {
     border: none;
@@ -191,34 +191,34 @@ nav {
   padding: 20px 0 0 0; }
 
 button {
-  background-color: #7cd5c1;
-  border: 2px solid #58aa99;
+  background-color: #8db2cb;
+  border: 2px solid #678ea7;
   padding: 8px 24px;
   font-size: 16px;
   border-radius: 10px;
   margin: 18px;
-  color: #23463f;
+  color: #2b3e4a;
   transition: all 0.3s; }
   button:hover {
-    background-color: #58aa99;
-    color: #fafefd; }
+    background-color: #678ea7;
+    color: white; }
 
 ::-webkit-input-placeholder {
-  color: #35675d;
+  color: #3e596a;
   text-transform: capitalize; }
 
 :-moz-placeholder {
-  color: #35675d;
+  color: #3e596a;
   text-transform: capitalize;
   opacity: 1; }
 
 ::-moz-placeholder {
-  color: #35675d;
+  color: #3e596a;
   text-transform: capitalize;
   opacity: 1; }
 
 :-ms-input-placeholder {
-  color: #35675d;
+  color: #3e596a;
   text-transform: capitalize; }
 
 input, button {
@@ -228,14 +228,14 @@ main {
   height: 100vh;
   max-width: 520px;
   margin: 0 auto;
-  background-color: #abe7db; }
+  background-color: #c4dbec; }
 
 ul {
-  background-color: #abe7db;
+  background-color: #c4dbec;
   padding-bottom: 80px; }
 
 .list-item:hover {
-  background-color: #58aa99; }
+  background-color: #678ea7; }
 
 .outer {
   max-width: 520px;
@@ -269,17 +269,17 @@ ul {
   text-align: center;
   height: 60px;
   width: 100%;
-  background-color: #46897b;
+  background-color: #50748b;
   display: none; }
   .action button {
-    background-color: #46897b;
-    border: 2px solid #7cd5c1;
+    background-color: #50748b;
+    border: 1px solid #8db2cb;
     padding: 4px 16px;
     font-size: 14px;
     border-radius: 6px;
     margin: 18px;
-    color: #cbf0e9;
+    color: #e3eef6;
     transition: all 0.3s; }
     .action button:hover {
-      background-color: #58aa99;
-      color: #fafefd; }
+      background-color: #678ea7;
+      color: white; }
