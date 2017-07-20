@@ -9,10 +9,8 @@ body {
 nav, .list-item {
     background-color: $light-brand;
     margin: 0 auto;
-    height: 80px; // to autoo on click
     max-width: 520px;
     transition: all 0.6s;
-    overflow: hidden;
 }
 
 
@@ -35,10 +33,9 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 80px;
+    height: auto;
 }
 
-.hide { height: 80px; }
 
 .container-nav, .container {
     max-width: 520px;
@@ -56,15 +53,11 @@ nav {
 #search-bar {
     background-color: $light-brand;
     margin: 0 auto;
-    height: auto;
+    height: 80px;
     max-width: 520px;
     transition: all 0.6s;
     text-align: center;
     overflow: hidden;
-}
-
-.pad {
-    padding: 4px 0px 28px 0px;
 }
 
 #search-bar > input[type=text] {
@@ -73,7 +66,6 @@ nav {
 	font-size: 		 26px;
 	font-weight: 	  400;
     border-radius:   25px;
-    display:         none;
 	padding:   	  2px 20px 2px 20px;
     background-color: $light-brand;
     
@@ -93,7 +85,7 @@ nav {
 #add-bar {
     background-color: $light-brand;
     margin: 0 auto;
-    height: auto;
+    height: 380px;
     max-width: 520px;
     transition: all 0.6s;
     overflow: hidden;
@@ -201,13 +193,12 @@ ul {
 }
 
 .outer {   
-    max-width: 520px;
+   width: 520px;
     margin: 0 auto;
     display: flex;
-    height: 100%;
-    align-items: center;
+    height: 80px;
     cursor: pointer;
-    padding: 0 8px 0 18px;
+    padding: 8px 8px 0 18px;
 	transition: margin 0.8s ease;
 }
 
@@ -223,24 +214,23 @@ ul {
 }
 
 .flag {
-    padding: 8px;
+    align-self: center;
 }
-
 
 
 // Action div
 
 .action {
     text-align: center;
-    height: 60px;
+    height: 80px;
+    overflow: hidden;
     width: 100%;
     background-color: darken($dark-brand,10);
-    display: none;
     button {
         background-color: darken($dark-brand,10);
         border: 1px solid $brand;
-        padding: 4px 16px;
-        font-size: 14px;
+        padding: 6px 18px;
+        font-size: 16px;
         border-radius: 6px;
         margin: 18px;
         color: lighten($light-brand, 8);
@@ -252,4 +242,10 @@ ul {
         }
     }
 
+}
+
+
+.hide { 
+    height: 0; 
+    display: none;
 }

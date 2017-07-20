@@ -1,31 +1,52 @@
 $(document).ready(function () {
 
+    // Search bar reveal
   $('#search').click(function () {
-    $("#search-bar").toggleClass("pad");
-    $("#search-input").slideToggle("slow", function () {
-    });
+    if ($("#search-bar").hasClass('hide')) {
+        $("#search-bar").show().removeClass('hide');
+    }
+    else {
+        $("#search-bar").fadeOut().addClass('hide');
+    }
   });
+
 
   $('#add').click(function () {
-    $("#add-bar").slideToggle("slow", function () {
-    });
+    if ($("#add-bar").hasClass('hide')) {
+        $("#add-bar").show().removeClass('hide');
+    }
+    else {
+        $("#add-bar").fadeOut().addClass('hide');
+    }
   });
-
 
   // Options bar reveal
   $('.list-item').click(function () {
     if ($(this).children('.action').hasClass('hide')) {
-      $(this).animate({ height: 140 }, 200, function () {
+      
+        $(this).children('.action').show().removeClass('hide');
 
-        $(this).children('.action').fadeIn().removeClass('hide');
-
-      });
     } else {
-      $(this).animate({ height: 80 }, 200, function () {
+      
         $(this).children('.action').fadeOut().addClass('hide');
-      });
+ 
     }
   });
+
+  // // Options bar reveal
+  // $('.list-item').click(function () {
+  //   if ($(this).children('.action').hasClass('hide')) {
+  //     $(this).animate({ height: 140 }, 200, function () {
+
+  //       $(this).children('.action').fadeIn().removeClass('hide');
+
+  //     });
+  //   } else {
+  //     $(this).animate({ height: 80 }, 200, function () {
+  //       $(this).children('.action').fadeOut().addClass('hide');
+  //     });
+  //   }
+  // });
 
 
   // Search function
