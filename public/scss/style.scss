@@ -13,6 +13,9 @@
 
 body {background-color: $back}
 
+
+/*----------  Nav  ----------*/
+
 nav, .list-item {
     margin:       0 auto;
     max-width:     520px;
@@ -38,6 +41,11 @@ nav {
     max-width: 520px;
     margin:   0 auto;
 }
+
+/*----------  Header Dropdowns  ----------*/
+
+
+/*---  Searchbar ---*/
 
 #search-bar {
     margin:       0 auto;
@@ -68,6 +76,8 @@ nav {
 
 #search-bar > input[type=text]:focus {outline: none}
 
+
+/*---  Add-bar ---*/
 #add-bar {
     margin:   0 auto;
     height:    380px;
@@ -117,7 +127,7 @@ button {
     transition: all 0.3s;
     background-color:      $brand;
     border: 2px solid $dark-brand;
-    color:        $lighter-brand;
+    color:         $lighter-brand;
 
     &:hover {
         color: $text;
@@ -148,6 +158,8 @@ button {
 	color:      $lighter-brand;
 	text-transform: capitalize;
 }
+
+/*----------  Main Body  ----------*/
 
 main {
     height:    100vh;
@@ -183,10 +195,10 @@ li:nth-last-child(1) {
     width:    520px;
     margin:  0 auto;
     display:   flex;
-    align-items: center;
     height:    80px;
     cursor: pointer;
-    padding:      0 8px 0 18px;
+    align-items:          center;
+    padding:        0 8px 0 18px;
 	transition: margin 0.8s ease;
 }
 
@@ -198,10 +210,10 @@ li:nth-last-child(1) {
 
 .li-text {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 80px;
-    flex-grow:       1;
+    height:  80px;
+    flex-grow:  1;
+    flex-direction:   column;
+    justify-content:  center;
     padding: 0 22px 8px 22px;
 }
 
@@ -211,7 +223,8 @@ li:nth-last-child(1) {
     margin: 0px auto 8px;
 }
 
-// Action div
+
+/*----------  Action Div  ----------*/
 
 .action {
     text-align: center;
@@ -224,7 +237,7 @@ li:nth-last-child(1) {
         font-size:        16px;
         border-radius:     6px;
         transition:   all 0.3s;
-        color: $lighter-brand;
+        color:  $lighter-brand;
         background-color:    $dark-brand;
         border: 1px solid $lighter-brand;
 
@@ -235,9 +248,10 @@ li:nth-last-child(1) {
     }
 }
 
-.delete-form, .edit-form {
-    display: inline-block;
-}
+.delete-form, .edit-form {display: inline-block}
+
+
+/*----------  Helper Classes  ----------*/
 
 .hide { 
     height:     0; 
