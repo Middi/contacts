@@ -20,7 +20,9 @@
                     </div>
                     <div class="action hide">
                         <button>edit</button>
-                        <button>delete</button>
+                        <form class="delete-form" action="/<%= contact._id %>?_method=DELETE" method="POST">
+                            <button>delete</button>
+                        </form>
                     </div>
                 </li>  
              <% }); %>

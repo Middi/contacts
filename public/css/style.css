@@ -286,6 +286,9 @@ li:nth-last-child(1) {
       background-color: #6a404f;
       color: #fcfcfc; }
 
+.delete-form, .edit-form {
+  display: inline-block; }
+
 .hide {
   height: 0;
   display: none; }

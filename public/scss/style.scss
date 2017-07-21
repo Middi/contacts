@@ -231,6 +231,10 @@ li:nth-last-child(1) {
     }
 }
 
+.delete-form, .edit-form {
+    display: inline-block;
+}
+
 .hide { 
     height:     0; 
     display: none;

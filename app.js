@@ -9,6 +9,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var passportLocalMongoose = require("passport-local-mongoose");
 var bodyParser = require('body-parser');
+var methodOverride = require("method-override");
 var User = require("./models/user");
 
 
@@ -25,6 +26,7 @@ mongoose.connect("mongodb://Middi:youandme123@ds161022.mlab.com:61022/contacts")
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 // Set Public Folder
 app.use(express.static(path.join(__dirname, 'public')));

@@ -67,6 +67,49 @@ router.post('/', upload.single('avatar'), function (req, res, next){
 });
 
 
+// Edit Campground
+
+router.get("/:id", function(req, res){
+    Contact.findById(req.params.id, function(err, foundContact){
+        if(err){
+            res.send('error editing');
+        }
+        res.render("campgrounds/edit", {
+            campground: foundCampground
+        });
+    });
+});
+
+
+// Update Campground
+router.put("/:id", function(req, res){
+    Contact.findByIdAndUpdate(req.params.id, function(err, updatedContact){
+        if(err){
+            res.send('error updating');
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+});
+
+
+// Delete Route
+router.delete("/:id", function(req, res){
+    Contact.findByIdAndRemove(req.params.id, function(err){
+       if(err){
+           console.log(err);
+           res.send('oops error');
+       } 
+       else {
+           res.redirect("/");
+       }
+    });
+});
+
+
+
+
 // ======================
 // AUTH ROUTES
 // ======================
