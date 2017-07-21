@@ -9,8 +9,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding:    0;
     border:     0;
     font: inherit;
-    font-size:           100%;
-    vertical-align:  baseline;
+    font-size:          100%;
+    vertical-align: baseline;
 }
 
 
@@ -20,11 +20,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
 
-body {line-height: 1;}
+body {line-height: 1}
 
-ol, ul {list-style: none;}
+ol, ul {list-style: none}
 
-blockquote, q {quotes: none;}
+blockquote, q {quotes: none}
 
 blockquote:before, blockquote:after, q:before, q:after {
     content:   '';
@@ -36,11 +36,6 @@ table {
     border-spacing:         0;
 }
 
-
-//--------------------------------
-// Added for Cult
-//--------------------------------
-
 *  {
     box-sizing:              border-box;
     text-rendering:  optimizeLegibility;
@@ -48,7 +43,7 @@ table {
     -moz-osx-font-smoothing:  grayscale;
 }
 
-a {text-decoration: none;}
+a {text-decoration: none}
 
 
 //--------------------------------
@@ -57,6 +52,6 @@ a {text-decoration: none;}
 
 input, select {
     -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
 }

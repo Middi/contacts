@@ -1,6 +1,15 @@
+/*=============================================
+=                Stylesheet Main              =
+=============================================*/
+
+
+/*----------  Imports  ----------*/
 @import "normalise";
 @import "colors";
 @import "typography";
+
+
+/*----------  Styles  ----------*/
 
 body {background-color: $back}
 
@@ -141,11 +150,6 @@ button {
 	text-transform: capitalize;
 }
 
-
-// ---- Remove IOS Standard Styles ---- //
-
-input, button {-webkit-appearance: none}
-
 main {
     height:    100vh;
     max-width: 520px;
@@ -155,7 +159,7 @@ main {
 
 ul {
     padding-bottom: 80px;
-    background-color: desaturate(darken($light-brand, 3),2);
+    background-color: desaturate($light-brand,2);
 }
 
 .list-item {
