@@ -183,9 +183,10 @@ li:nth-last-child(1) {
     width:    520px;
     margin:  0 auto;
     display:   flex;
+    align-items: center;
     height:    80px;
     cursor: pointer;
-    padding:      8px 8px 0 18px;
+    padding:      0 8px 0 18px;
 	transition: margin 0.8s ease;
 }
 
@@ -196,8 +197,12 @@ li:nth-last-child(1) {
 }
 
 .li-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
     flex-grow:       1;
-    padding-left: 22px;
+    padding: 0 22px 8px 22px;
 }
 
 .flag {
