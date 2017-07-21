@@ -3,7 +3,6 @@ var countries = require('country-data').countries;
 var express = require("express");
 var router = express.Router();
 var multer = require('multer');
-var upload = multer({ dest: 'uploads/' })
 var passport = require("passport");
 var User = require("../models/user");
 var Contact = require("../models/contacts");
@@ -14,15 +13,14 @@ var ext = "";
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // Absolute path. Folder must exist, will not be created for you.
+    cb(null, 'uploads/')
   },
   filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now());
+    cb(null, file.fieldname + '-' + Date.now() + file.originalname)
   }
-});
-
-var upload = multer({ storage: storage });
-
+})
+ 
+var upload = multer({ storage: storage })
 
 
 // INDEX ROUTE Show all contacts
@@ -48,7 +46,7 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     var number = req.body.number;
     var country = req.body.country;
     ext = req.file.mimetype.replace("image/", ".");
-    var avatar = req.file.path+ext;
+    var avatar = req.file.path;
     var newContact = {firstName: firstName, lastName: lastName, number: number, country: country, avatar: avatar};
 
     if(ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
