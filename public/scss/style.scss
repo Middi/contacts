@@ -48,9 +48,8 @@ nav {
     border-radius:   25px;
 	padding:   	 2px 20px 2px 20px;
     background-color: $light-brand;
-    
-	transition:        width 0.4s ease-in-out;
-    border: 2px solid lighten($dark-brand, 2);
+	transition: width 0.4s ease-in-out;
+    border:      2px solid $dark-brand;
 
     &:focus {
         outline: none;
@@ -83,9 +82,9 @@ nav {
         margin:         6px;
         border-radius: 25px;
         padding:   6px 20px;
-        background-color: $light-brand;
-        transition:        width 0.4s ease-in-out;
-        border: 2px solid lighten($dark-brand, 2);
+        background-color:     $light-brand;
+        transition: width 0.4s ease-in-out;
+        border:      2px solid $dark-brand;
 
         &:focus {
             outline: none;
@@ -103,14 +102,14 @@ nav {
 #file {padding: 20px 0 0 0}
 
 button {
-    padding:   6px 26px;
-    font-size:     16px;
-    border-radius: 10px;
-    margin:        18px;
-    transition: all     0.3s;
-    background-color: $brand;
-    border:    2px solid $dark-brand;
-	color: lighten($light-brand, 50);
+    padding:    6px 26px;
+    font-size:      16px;
+    border-radius:  10px;
+    margin:         18px;
+    transition: all 0.3s;
+    background-color:      $brand;
+    border: 2px solid $dark-brand;
+    color:        $lighter-brand;
 
     &:hover {
         color: $text;
@@ -121,25 +120,25 @@ button {
 // ---- Placeholder Text ---- //
 
 ::-webkit-input-placeholder {
-	color: lighten($light-brand, 30);
-	text-transform:       capitalize;
+	color:      $lighter-brand;
+	text-transform: capitalize;
 }
 
 :-moz-placeholder {
-	color: lighten($light-brand, 30);
-	text-transform:       capitalize;
-	opacity: 	   		           1;
+	color:      $lighter-brand;
+	text-transform: capitalize;
+	opacity: 	             1;
 }
 
 ::-moz-placeholder {
-	color: lighten($light-brand, 30);
-	text-transform:       capitalize;
-	opacity: 	 		           1;
+	color:      $lighter-brand;
+	text-transform: capitalize;
+	opacity: 	 		     1;
 }
 
 :-ms-input-placeholder {
-	color: lighten($light-brand, 30);
-	text-transform:       capitalize;
+	color:      $lighter-brand;
+	text-transform: capitalize;
 }
 
 
@@ -210,16 +209,16 @@ li:nth-last-child(1) {
     text-align: center;
     height:       80px;
     overflow:   hidden;
-    background-color: darken($dark-brand, 4);
+    background-color: $dark-brand;
 
     button {
-        padding:    6px 18px;
-        font-size:      16px;
-        border-radius:   6px;
-        transition: all 0.3s;
-        background-color:    darken($dark-brand, 4);
-        color:            lighten($light-brand, 40);
-        border: 1px solid lighten($light-brand, 25);
+        padding:      6px 18px;
+        font-size:        16px;
+        border-radius:     6px;
+        transition:   all 0.3s;
+        color: $lighter-brand;
+        background-color:    $dark-brand;
+        border: 1px solid $lighter-brand;
 
         &:hover {
             background-color: $brand;
