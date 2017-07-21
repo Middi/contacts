@@ -1,8 +1,9 @@
 $(document).ready(function () {
 
-  // ================
+  // ===========================
   // Search bar reveal
-  // ================
+  // ===========================
+
   $('#search').click(function () {
     if ($("#search-bar").hasClass('hide')) {
       $("#search-bar").show().removeClass('hide');
@@ -15,9 +16,10 @@ $(document).ready(function () {
   });
 
 
-  // ================
+  // ===========================
   // Add new contact bar reveal
-  // ================
+  // ===========================
+
   $('#add').click(function () {
     if ($("#add-bar").hasClass('hide')) {
       $("#add-bar").show().removeClass('hide');
@@ -27,9 +29,10 @@ $(document).ready(function () {
     }
   });
 
-  // ================
+
+  // ===========================
   // Contacts edit/delete bar reveal
-  // ================
+  // ===========================
 
   $('.list-item').click(function () {
     if ($(this).children('.action').hasClass('hide')) {
@@ -42,14 +45,12 @@ $(document).ready(function () {
   });
 
 
-  // ================
+  // ===========================
   // Search function
-  // ================
+  // ===========================
 
-
-  // get element and add eventlistener
+  // Get element and add eventlistener
   document.getElementById('search-input').addEventListener('keyup', filterNames);
-
 
   function filterNames() {
     // take value and convert to uppercase
@@ -71,6 +72,10 @@ $(document).ready(function () {
   }
 
 
+  // ===========================
+  // Add stripes
+  // ===========================
+
   function stripes() {
     var trs = document.getElementsByTagName("li"),
       count = 0;
@@ -85,7 +90,7 @@ $(document).ready(function () {
     }
   }
 
-
+  // Call Stripes
   stripes();
 });
 
