@@ -35,22 +35,22 @@
             </div>
 
 
-            <div id="add-bar" class="hide">
-                <form id="add-form" action="/" method="POST" enctype="multipart/form-data">
+            <div id="add-bar">
+                <form id="add-form" action="/<%= contactUser._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input id="firstName" class="form-control" type="text" name="firstName" placeholder="First Name">
+                        <input id="firstName" class="form-control" type="text" name="contactUser[firstName]" value="<%= contactUser.firstName %>" placeholder="First Name">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="lastName" placeholder="Last Name">
+                        <input class="form-control" type="text" name="contactUser[lastName]" value="<%= contactUser.lastName %>" placeholder="Last Name">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="number" placeholder="Number">
+                        <input class="form-control" type="text" name="contactUser[number]" value="<%= contactUser.number %>" placeholder="Number">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="country" placeholder="Country">
+                        <input class="form-control" type="text" name="contactUser[country]" value="<%= contactUser.country %>" placeholder="Country">
                     </div>
                     <div class="form-group">
-                        <input id="file" class="form-control" type="file" name="avatar" placeholder="Image">
+                        <input id="file" class="form-control" type="file" name="contactUser[avatar]" placeholder="Image">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-block">Submit</button>

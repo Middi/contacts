@@ -92,5 +92,24 @@ $(document).ready(function () {
 
   // Call Stripes
   stripes();
+
+
+  // ===========================
+  // Add new contact bar reveal
+  // ===========================
+
+  $('.edit').click(function () {
+    if ($("#add-bar").hasClass('hide')) {
+      $("#add-bar").show().removeClass('hide');
+      var data = $(this).attr('data');
+      console.log(data);
+      console.log(contact);
+      $('#firstName').val(data['firstName']);
+    }
+    else {
+      $("#add-bar").fadeOut().addClass('hide');
+    }
+  });
+
 });
 

@@ -70,12 +70,15 @@ router.post('/', upload.single('avatar'), function (req, res, next){
 // Edit Campground
 
 router.get("/:id", function(req, res){
-    Contact.findById(req.params.id, function(err, foundContact){
+   Contact.find({}, function(err, allContacts){
+        Contact.findById(req.params.id, function(err, contactUser){
         if(err){
             res.send('error editing');
         }
-        res.render("campgrounds/edit", {
-            campground: foundCampground
+        res.render('edit', {
+            contactUser: contactUser,
+            contact: allContacts
+        });
         });
     });
 });
@@ -84,8 +87,8 @@ router.get("/:id", function(req, res){
 // Update Campground
 router.put("/:id", function(req, res){
     Contact.findByIdAndUpdate(req.params.id, function(err, updatedContact){
-        if(err){
-            res.send('error updating');
+    if(err){
+            res.show('error updating');
         }
         else {
             res.redirect('/');
