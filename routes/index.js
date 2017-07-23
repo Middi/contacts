@@ -1,4 +1,6 @@
+var path = require('path')
 var cloudinary = require('cloudinary');
+var Datauri = require('datauri')
 var countries = require('country-data').countries;
 var express = require("express");
 var router = express.Router();
@@ -11,18 +13,16 @@ var _ = require('lodash');
 
 // File Name extension for Multer
 var ext = "";
+var upload = multer();
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + file.originalname);
-  }
-});
-
-var upload = multer({ storage: storage });
-
+// TODO: Create an account and replace these values with yours
+// Probably a good idea to store these in an .env file
+// Look up the dontenv package on npm for more details
+cloudinary.config({
+  cloud_name: 'dac6qvpgu',
+  api_key: '475845722243262',
+  api_secret: 'IeYXAbSAlPqAgk0YfnkMljZwddc'
+})
 
 // INDEX ROUTE Show all contacts
 router.get('/', function(req, res){
@@ -46,23 +46,28 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     var lastName = req.body.lastName;
     var number = req.body.number;
     var country = req.body.country;
-    ext = req.file.mimetype.replace("image/", ".");
-    var avatar = req.file.path;
-    var newContact = {firstName: firstName, lastName: lastName, number: number, country: country, avatar: avatar};
+    var avatar = req.file
 
-    if(ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
-        Contact.create(newContact, function(err, newlyCreated){
-            if(err) {
-                console.log(err);
-            }
-            else {
-                res.redirect('/');
-            }
-        });
-    }
-    else {
-        res.send('File type not supported, use .jpg or .png. Click back to try again');
-    }
+    var dUri = new Datauri()
+    dUri.format(path.extname(req.file.originalname).toString(), req.file.buffer)
+    cloudinary.uploader.upload(dUri.content, function(results) {
+      var newContact = {
+        firstName: firstName,
+        lastName: lastName,
+        number: number,
+        country: country,
+        avatar: results.url
+      };
+      
+      Contact.create(newContact, function(err, newlyCreated){
+          if(err) {
+              console.log(err);
+          }
+          else {
+              res.redirect('/');
+          }
+      });
+    })
 });
 
 
