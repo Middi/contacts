@@ -7,6 +7,7 @@ var passport = require("passport");
 var User = require("../models/user");
 var Contact = require("../models/contacts");
 var middleware = require("../middleware");
+var _ = require('lodash');
 
 // File Name extension for Multer
 var ext = "";
@@ -19,7 +20,7 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + Date.now() + file.originalname);
   }
 });
- 
+
 var upload = multer({ storage: storage });
 
 
@@ -68,6 +69,13 @@ router.post('/', upload.single('avatar'), function (req, res, next){
 // Edit Campground
 
 router.get("/:id", function(req, res){
+  // Contact.find({}).lean().exec(function(err, allContacts) {
+  //   if (err) return res.send({ success: false, msg: 'Error fetching from db' })
+  //   var contactUser = _.find(allContacts, function(contact) {
+  //     return contact._id === req.params.id
+  //   })
+  //   res.render('edit', { contactUser: contactUser, contact: allContacts })
+  // })
    Contact.find({}, function(err, allContacts){
         Contact.findById(req.params.id, function(err, contactUser){
         if(err){
@@ -77,16 +85,18 @@ router.get("/:id", function(req, res){
             contactUser: contactUser,
             contact: allContacts
         });
-        });
+      });
     });
 });
 
 
 // Update Campground
-router.put("/:id", function(req, res){
-    Contact.findByIdAndUpdate(req.params.id, function(err, updatedContact){
+// TODO: must add update object
+router.post("/edit/:id", upload.single('avatar'), function(req, res){
+  const { firstName, lastName, country, avatar, number } = req.body
+    Contact.findByIdAndUpdate(req.params.id, { firstName, lastName, country, avatar, number }, function(err, updatedContact){
     if(err){
-            res.show('error updating');
+            res.send('error updating');
         }
         else {
             res.redirect('/');
@@ -101,7 +111,7 @@ router.delete("/:id", function(req, res){
        if(err){
            console.log(err);
            res.send('oops error');
-       } 
+       }
        else {
            res.redirect("/");
        }
@@ -117,7 +127,7 @@ router.delete("/:id", function(req, res){
 
 // show register form
 // router.get('/register', function(req, res){
-//    res.render('register'); 
+//    res.render('register');
 // });
 
 
@@ -146,7 +156,7 @@ router.delete("/:id", function(req, res){
 //         successRedirect: "/",
 //         failureRedirect: "/login"
 //     }), function(req, res){
-        
+
 // });
 
 
