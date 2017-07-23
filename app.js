@@ -22,9 +22,12 @@ var port = process.env.PORT || 4000;
 
 
 // APP CONFIG
+// TODO: put this is a .env file
 mongoose.connect("mongodb://Middi:youandme123@ds161022.mlab.com:61022/contacts");
+
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.set('views', path.join(__dirname, 'views'))
+app.use(bodyParser.json('*/*'))
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 
@@ -33,6 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // PASSPORT CONFIGURATION
+// TODO: put session secret in .env file
 app.use(require("express-session")({
     secret: "Table Plate",
     resave: false,
@@ -60,5 +64,5 @@ app.use(function(req, res, next){
 
 // Start Server
 app.listen(port, function () {
-    console.log('server started on port 4000');
+    console.log('server started on port', port);
 });

@@ -15,6 +15,7 @@ lib-cov
 *.out
 *.pid
 *.gz
+uploads
 
 pids
 logs

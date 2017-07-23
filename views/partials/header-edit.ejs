@@ -4,11 +4,11 @@
         <title>Contacts</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-        
+
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css" rel="stylesheet">
-        
+
         <!-- Local CSS -->
         <link href="/css/style.css" rel="stylesheet">
     </head>
@@ -36,21 +36,18 @@
 
 
             <div id="add-bar">
-                <form id="add-form" action="/<%= contactUser._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                  <form id="add-form" action="/edit/<%= contactUser._id %>" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <input id="firstName" class="form-control" type="text" name="contactUser[firstName]" value="<%= contactUser.firstName %>" placeholder="First Name">
+                        <input id="firstName" class="form-control" type="text" name="firstName" value="<%= contactUser.firstName %>" placeholder="First Name">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="contactUser[lastName]" value="<%= contactUser.lastName %>" placeholder="Last Name">
+                        <input class="form-control" type="text" name="lastName" value="<%= contactUser.lastName %>" placeholder="Last Name">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="contactUser[number]" value="<%= contactUser.number %>" placeholder="Number">
+                        <input class="form-control" type="text" name="number" value="<%= contactUser.number %>" placeholder="Number">
                     </div>
                     <div class="form-group">
-                        <input class="form-control" type="text" name="contactUser[country]" value="<%= contactUser.country %>" placeholder="Country">
-                    </div>
-                    <div class="form-group">
-                        <input id="file" class="form-control" type="file" name="contactUser[avatar]" placeholder="Image">
+                        <input class="form-control" type="text" name="country" value="<%= contactUser.country %>" placeholder="Country">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-primary btn-block">Submit</button>
