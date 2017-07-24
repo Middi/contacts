@@ -36,14 +36,17 @@
         </header>
 
 
-
             <div id="search-bar" class="hide">
                 <input id="search-input" type="text" name="search" value="" placeholder="Search">
             </div>
 
 
-            <div id="add-bar">
-                  <form id="add-form" action="/edit/<%= contactUser._id %>" method="POST">
+            <div id="edit-bar">
+                <div class="edit-avatar">
+                    <img src="<%= contactUser.avatar %>">
+                </div>
+                
+                <form id="add-form" action="/edit/<%= contactUser._id %>" method="POST">
                     <div class="form-group">
                         <input id="firstName" class="form-control" type="text" name="firstName" value="<%= contactUser.firstName %>" placeholder="First Name">
                     </div>
@@ -60,7 +63,8 @@
                         <button class="btn btn-primary btn-block">Submit</button>
                     </div>
                 </form>
-                    <div class="cancel">
-                        <a href="/">Cancel</a>
-                    </div>
+
+                <div class="cancel">
+                    <a href="/">Cancel</a>
+                </div>
             </div>

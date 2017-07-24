@@ -73,16 +73,8 @@ router.post('/', upload.single('avatar'), function (req, res, next){
 });
 
 
-// Edit Campground
-
+// Edit Contact
 router.get("/:id", function(req, res){
-  // Contact.find({}).lean().exec(function(err, allContacts) {
-  //   if (err) return res.send({ success: false, msg: 'Error fetching from db' })
-  //   var contactUser = _.find(allContacts, function(contact) {
-  //     return contact._id === req.params.id
-  //   })
-  //   res.render('edit', { contactUser: contactUser, contact: allContacts })
-  // })
    Contact.find({}, function(err, allContacts){
         Contact.findById(req.params.id, function(err, contactUser){
         if(err){
@@ -97,8 +89,7 @@ router.get("/:id", function(req, res){
 });
 
 
-// Update Campground
-// TODO: must add update object
+// Update Contact
 router.post("/edit/:id", function(req, res){
   const { firstName, lastName, country, number } = req.body
     Contact.findByIdAndUpdate(req.params.id, { firstName, lastName, country, number }, function(err, updatedContact){
@@ -110,6 +101,20 @@ router.post("/edit/:id", function(req, res){
         }
     });
 });
+
+// TODO: update image
+router.post("/edit/photo/:id", function(req, res){
+  const { firstName, lastName, country, number } = req.body
+    Contact.findByIdAndUpdate(req.params.id, { firstName, lastName, country, number }, function(err, updatedContact){
+    if(err){
+            res.send('error updating');
+        }
+        else {
+            res.redirect('/');
+        }
+    });
+});
+
 
 
 // Delete Route

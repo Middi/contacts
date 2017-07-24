@@ -51,7 +51,7 @@ nav {
 
 
 /*---  Add-bar ---*/
-#add-bar {
+#add-bar, #edit-bar {
     margin:   0 auto;
     height:    380px;
     width:      100%;
@@ -59,6 +59,10 @@ nav {
     padding:    10px;
     transition:    all 0.6s;
     background-color: $text;
+}
+
+#edit-bar {
+    height: 460px;
 }
 
 #add-form {
@@ -258,6 +262,18 @@ li:nth-last-child(1) {border-bottom: 1px solid $hover}
 }
 
 .delete-form, .edit-form {display: inline-block}
+
+.edit-avatar {
+    margin:     0 auto;
+    width:        100%;
+    text-align: center;
+    
+    img {
+        width:  80px;
+        height: 80px;
+        border-radius: 100%;
+    }
+}
 
 
 /*----------  Helper Classes  ----------*/
