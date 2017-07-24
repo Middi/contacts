@@ -29,6 +29,7 @@ nav {
     align-content: center;
     padding: 0 8px 0 18px;
     justify-content: space-between;
+    background-color: $text;
 }
 
 .nav-left, .nav-right {
@@ -40,6 +41,8 @@ nav {
 .container-nav, .container {
     max-width: 520px;
     margin:   0 auto;
+    border-left: 1px solid $text;
+    border-right: 1px solid $text;
 }
 
 /*----------  Header Dropdowns  ----------*/
@@ -54,23 +57,24 @@ nav {
     text-align:   center;
     overflow:     hidden;
     transition: all 0.6s;
-    background-color: $light-brand;
+    background-color: $text;
 }
 
 #search-bar > input[type=text] {
 	max-width: 		400px;
 	border: 		 none;
-	font-size: 		 26px;
+	font-size: 		 22px;
 	font-weight: 	  400;
     border-radius:   25px;
 	padding:   	 2px 20px 2px 20px;
     background-color: $light-brand;
 	transition: width 0.4s ease-in-out;
-    border:      2px solid $dark-brand;
+    border:     2px solid $light-brand;
 
     &:focus {
         outline: none;
-        background-color: lighten($light-brand, 4);
+        color: $dark-brand;
+        background-color: $light-brand;
     }
 }
 
@@ -84,7 +88,7 @@ nav {
     max-width: 520px;
     overflow: hidden;
     transition:           all 0.6s;
-    background-color: $light-brand;
+    background-color: $text;
 }
 
 #add-form {
@@ -114,6 +118,7 @@ nav {
         border:             none;
         font-size:          12px;
         margin: 12px 0 12px 62px;
+        color: white;
     }
 }
 
@@ -125,37 +130,37 @@ button {
     border-radius:  10px;
     margin:         18px;
     transition: all 0.3s;
-    background-color:      $brand;
-    border: 2px solid $dark-brand;
-    color:         $lighter-brand;
+    background-color:      $dark-brand;
+    border: 2px solid $light-brand;
+    color:         $light-brand;
 
     &:hover {
-        color: $text;
-        background-color: $dark-brand;
+        color: $dark-brand;
+        background-color: $light-brand;
     }
 }
 
 // ---- Placeholder Text ---- //
 
 ::-webkit-input-placeholder {
-	color:      $lighter-brand;
+	color:      $placeholder;
 	text-transform: capitalize;
 }
 
 :-moz-placeholder {
-	color:      $lighter-brand;
+	color:      $placeholder;
 	text-transform: capitalize;
 	opacity: 	             1;
 }
 
 ::-moz-placeholder {
-	color:      $lighter-brand;
+	color:      $placeholder;
 	text-transform: capitalize;
 	opacity: 	 		     1;
 }
 
 :-ms-input-placeholder {
-	color:      $lighter-brand;
+	color:      $placeholder;
 	text-transform: capitalize;
 }
 
@@ -184,18 +189,15 @@ ul {
     height:  auto;
     flex-direction:      column;
     justify-content: flex-start;
+    border-left: 1px solid $hover;
+    border-right: 1px solid $hover;
 }
 
 li:nth-child(odd)  {background: $brand}
 li:nth-child(even) {background: $light-brand}
-li:nth-last-child(1) { 
-         border-bottom:    2px solid $dark-brand;
-	-webkit-box-shadow: 0 2px 12px 0 $dark-brand;
-	   -moz-box-shadow: 0 2px 12px 0 $dark-brand;
-            box-shadow: 0 2px 12px 0 $dark-brand;
-}
+li:nth-last-child(1) {border-bottom: 1px solid $hover}
 
-.list-item:hover {background-color: $dark-brand}
+.list-item:hover {background-color: $hover}
 
 .outer {
     max-width:    520px;
