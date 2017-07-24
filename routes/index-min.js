@@ -1,4 +1,6 @@
+var path = require('path')
 var cloudinary = require('cloudinary');
+var Datauri = require('datauri');
 var countries = require('country-data').countries;
 var express = require("express");
 var router = express.Router();
@@ -7,20 +9,21 @@ var passport = require("passport");
 var User = require("../models/user");
 var Contact = require("../models/contacts");
 var middleware = require("../middleware");
+var _ = require('lodash');
 
 // File Name extension for Multer
 var ext = "";
+var upload = multer();
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'uploads/')
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + '-' + Date.now() + file.originalname);
-  }
+// TODO: Create an account and replace these values with yours
+// Probably a good idea to store these in an .env file
+// Look up the dontenv package on npm for more details
+cloudinary.config({
+  cloud_name: 'middi',
+  api_key: '963882663421214',
+  api_secret: 'F4p7vxCEa-ts7SCLx8Y1iCeJEMA'
 });
- 
-var upload = multer({ storage: storage });
+
 
 
 // INDEX ROUTE Show all contacts
@@ -45,29 +48,41 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     var lastName = req.body.lastName;
     var number = req.body.number;
     var country = req.body.country;
-    ext = req.file.mimetype.replace("image/", ".");
-    var avatar = req.file.path;
-    var newContact = {firstName: firstName, lastName: lastName, number: number, country: country, avatar: avatar};
+    var avatar = req.file
 
-    if(ext === '.png' || ext === '.jpg' || ext === '.jpeg') {
-        Contact.create(newContact, function(err, newlyCreated){
-            if(err) {
-                console.log(err);
-            }
-            else {
-                res.redirect('/');
-            }
-        });
-    }
-    else {
-        res.send('File type not supported, use .jpg or .png. Click back to try again');
-    }
+    var dUri = new Datauri();
+    dUri.format(path.extname(req.file.originalname).toString(), req.file.buffer)
+    cloudinary.uploader.upload(dUri.content, function(results) {
+      var newContact = {
+        firstName: firstName,
+        lastName: lastName,
+        number: number,
+        country: country,
+        avatar: results.url
+      };
+      
+      Contact.create(newContact, function(err, newlyCreated){
+          if(err) {
+              console.log(err);
+          }
+          else {
+              res.redirect('/');
+          }
+      });
+    })
 });
 
 
 // Edit Campground
 
 router.get("/:id", function(req, res){
+  // Contact.find({}).lean().exec(function(err, allContacts) {
+  //   if (err) return res.send({ success: false, msg: 'Error fetching from db' })
+  //   var contactUser = _.find(allContacts, function(contact) {
+  //     return contact._id === req.params.id
+  //   })
+  //   res.render('edit', { contactUser: contactUser, contact: allContacts })
+  // })
    Contact.find({}, function(err, allContacts){
         Contact.findById(req.params.id, function(err, contactUser){
         if(err){
@@ -77,16 +92,18 @@ router.get("/:id", function(req, res){
             contactUser: contactUser,
             contact: allContacts
         });
-        });
+      });
     });
 });
 
 
 // Update Campground
-router.put("/:id", function(req, res){
-    Contact.findByIdAndUpdate(req.params.id, function(err, updatedContact){
+// TODO: must add update object
+router.post("/edit/:id", upload.single('avatar'), function(req, res){
+  const { firstName, lastName, country, avatar, number } = req.body
+    Contact.findByIdAndUpdate(req.params.id, { firstName, lastName, country, avatar, number }, function(err, updatedContact){
     if(err){
-            res.show('error updating');
+            res.send('error updating');
         }
         else {
             res.redirect('/');
@@ -101,7 +118,7 @@ router.delete("/:id", function(req, res){
        if(err){
            console.log(err);
            res.send('oops error');
-       } 
+       }
        else {
            res.redirect("/");
        }
@@ -117,7 +134,7 @@ router.delete("/:id", function(req, res){
 
 // show register form
 // router.get('/register', function(req, res){
-//    res.render('register'); 
+//    res.render('register');
 // });
 
 
@@ -146,7 +163,7 @@ router.delete("/:id", function(req, res){
 //         successRedirect: "/",
 //         failureRedirect: "/login"
 //     }), function(req, res){
-        
+
 // });
 
 
@@ -159,4 +176,5 @@ router.delete("/:id", function(req, res){
 
 
 module.exports = router;
+
 

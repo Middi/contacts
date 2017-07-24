@@ -245,7 +245,7 @@ li:nth-last-child(1) {
   background-color: #562d3c; }
 
 .outer {
-  width: 520px;
+  max-width: 520px;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,6 +1,6 @@
 var path = require('path')
 var cloudinary = require('cloudinary');
-var Datauri = require('datauri')
+var Datauri = require('datauri');
 var countries = require('country-data').countries;
 var express = require("express");
 var router = express.Router();
@@ -19,10 +19,12 @@ var upload = multer();
 // Probably a good idea to store these in an .env file
 // Look up the dontenv package on npm for more details
 cloudinary.config({
-  cloud_name: 'dac6qvpgu',
-  api_key: '475845722243262',
-  api_secret: 'IeYXAbSAlPqAgk0YfnkMljZwddc'
-})
+  cloud_name: 'middi',
+  api_key: '963882663421214',
+  api_secret: 'F4p7vxCEa-ts7SCLx8Y1iCeJEMA'
+});
+
+
 
 // INDEX ROUTE Show all contacts
 router.get('/', function(req, res){
@@ -48,7 +50,7 @@ router.post('/', upload.single('avatar'), function (req, res, next){
     var country = req.body.country;
     var avatar = req.file
 
-    var dUri = new Datauri()
+    var dUri = new Datauri();
     dUri.format(path.extname(req.file.originalname).toString(), req.file.buffer)
     cloudinary.uploader.upload(dUri.content, function(results) {
       var newContact = {
