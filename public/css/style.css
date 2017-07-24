@@ -317,3 +317,16 @@ li:nth-last-child(1) {
 
 .hidden {
   display: none; }
+
+@media only screen and (max-width: 600px) {
+  #add-bar {
+    height: 400px; }
+  #add-form button {
+    font-size: 1.3rem; }
+  #search-bar {
+    height: 106px;
+    padding: 30px 20px; }
+    #search-bar input[type=text] {
+      font-size: 1.5rem; }
+  .action button {
+    font-size: 1.1rem; } }
