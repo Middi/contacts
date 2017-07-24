@@ -197,6 +197,7 @@ ul {
     justify-content:    flex-start;
     border-left:  1px solid $hover;
     border-right: 1px solid $hover;
+    border-top: 1px solid $hover;
 }
 
 li:nth-child(odd)    {background: $brand}

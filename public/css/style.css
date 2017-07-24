@@ -238,7 +238,8 @@ ul {
   flex-direction: column;
   justify-content: flex-start;
   border-left: 1px solid #dddddd;
-  border-right: 1px solid #dddddd; }
+  border-right: 1px solid #dddddd;
+  border-top: 1px solid #dddddd; }
 
 li:nth-child(odd) {
   background: #ececec; }
