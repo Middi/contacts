@@ -137,7 +137,7 @@ nav {
 #add-form {
   text-align: center;
   margin: 10px auto 10px; }
-  #add-form input[type=text], #add-form input[type=number] {
+  #add-form input[type=text], #add-form input[type=tel] {
     width: 75%;
     border: none;
     font-size: 1rem;
@@ -148,7 +148,7 @@ nav {
     background-color: #fcfcfc;
     transition: width 0.4s ease-in-out;
     border: 2px solid #f26959; }
-    #add-form input[type=text]:focus, #add-form input[type=number]:focus {
+    #add-form input[type=text]:focus, #add-form input[type=tel]:focus {
       outline: none;
       background-color: white; }
   #add-form input[type=file] {
