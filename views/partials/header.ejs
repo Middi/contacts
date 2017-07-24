@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Ionicons CSS -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
 
+    <!-- Flag-icon CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.css" rel="stylesheet">
 
     <!-- Local CSS -->
@@ -20,46 +22,40 @@
         <header>
             <div class="container-nav">
                 <nav>
+
+                    <!-- Search Button -->
                     <div class="nav-left">
                         <div id="search"><a href="#"><i class="ion-ios-search i-large"></i></a></div>
                     </div>
 
+                    <!-- Logo -->
                     <div class="logo">
                         <a href="/"><h1>Contacts</h1></a>
                     </div>
-
+                    
+                    <!-- Add Contact -->
                     <div class="nav-right">
                         <div id="add"><a href="#"><i class="ion-ios-plus-outline i-large"></i></a></div>
                     </div>
+
                 </nav>
             </div>
         </header>
 
-        <div id="add-bar" class="hide">
-
+        <!--- Add Form -->
+        <Section id="add-bar" class="hide">
             <form id="add-form" action="/" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input id="firstName" class="form-control" type="text" name="firstName" placeholder="First Name">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="lastName" placeholder="Last Name">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="tel" name="number" placeholder="Number">
-                </div>
-                <div class="form-group">
-                    <input class="form-control" type="text" name="country" placeholder="Country">
-                </div>
-                <div class="form-group">
-                    <input id="file" class="form-control" type="file" name="avatar" placeholder="Image">
-                </div>
-                <div class="form-group">
+                    <input class="first-name" type="text" name="firstName" placeholder="First Name">
+                    <input class="last-name" type="text" name="lastName" placeholder="Last Name">
+                    <input class="number" type="tel" name="number" placeholder="Number">
+                    <input class="country" type="text" name="country" placeholder="Country">
+                    <input class="file" type="file" name="avatar" placeholder="Image">
+
                     <button class="btn btn-primary btn-block">Submit</button>
-                </div>
             </form>
+        </section>
 
-        </div>
-
+        <!-- Search Unput -->
         <div id="search-bar" class="hide">
             <input id="search-input" type="text" name="search" value="" placeholder="Search">
         </div>

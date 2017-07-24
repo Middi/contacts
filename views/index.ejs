@@ -16,12 +16,15 @@
                         </div>
                     </div>
                     <div class="action hide">
+                        
                         <form class="edit-form" action="/<%= contact._id %>" method="GET">
                             <button class="edit">edit</button>
                         </form>
+
                         <form class="delete-form" action="<%= contact._id %>?_method=DELETE" method="POST">
                             <button>delete</button>
                         </form>
+
                     </div>
                 </li>  
              <% }); %>

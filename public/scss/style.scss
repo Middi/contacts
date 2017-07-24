@@ -95,7 +95,7 @@ nav {
     }
 }
 
-#file {padding: 20px 0 0 0}
+.file {padding: 20px 0 0 0}
 
 button {
     padding:    6px 22px;
@@ -103,6 +103,8 @@ button {
     border-radius:  10px;
     margin:         18px;
     transition: all 0.3s;
+    display:       block;
+    margin:    20px auto;
     background-color:      $dark-brand;
     color:                $light-brand;
     border:     2px solid $light-brand;
@@ -134,7 +136,7 @@ button {
 	font-weight:    400;
     border-radius: 25px;
 	padding:   2px 20px;
-    background-color:     $light-brand;
+    background-color: $light-brand;
     border: 1px solid lighten($placeholder, 20);
 
     &:focus {

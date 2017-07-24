@@ -157,7 +157,7 @@ nav {
     color: white;
     margin: 12px 0 12px 62px; }
 
-#file {
+.file {
   padding: 20px 0 0 0; }
 
 button {
@@ -166,6 +166,8 @@ button {
   border-radius: 10px;
   margin: 18px;
   transition: all 0.3s;
+  display: block;
+  margin: 20px auto;
   background-color: #f26959;
   color: #fcfcfc;
   border: 2px solid #fcfcfc; }
