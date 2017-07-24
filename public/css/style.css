@@ -140,7 +140,7 @@ nav {
   padding: 2px 20px 2px 20px;
   background-color: #fcfcfc;
   transition: width 0.4s ease-in-out;
-  border: 1px solid #f26959; }
+  border: 1px solid #ababab; }
   #search-bar > input[type=text]:focus {
     outline: none;
     color: #f26959;
