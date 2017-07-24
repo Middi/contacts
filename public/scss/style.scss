@@ -26,22 +26,24 @@ nav, .list-item {
 nav {
     height: 100px;
     display: flex;
-    align-content: center;
-    padding: 0 8px 0 18px;
-    justify-content: space-between;
+    align-content:   center;
+    padding:   0 8px 0 18px;
     background-color: $text;
+    justify-content: space-between;
 }
 
-.nav-left, .nav-right {
+.nav-left, .nav-right, .logo {
     height:        94px;
     display:       flex;
     align-items: center;
 }
 
+.logo {height: 90px}
+
 .container-nav, .container {
     max-width: 520px;
     margin:   0 auto;
-    border-left: 1px solid $text;
+    border-left:  1px solid $text;
     border-right: 1px solid $text;
 }
 
@@ -72,7 +74,7 @@ nav {
     border:     2px solid $light-brand;
 
     &:focus {
-        outline: none;
+        outline:      none;
         color: $dark-brand;
         background-color: $light-brand;
     }
@@ -87,7 +89,7 @@ nav {
     height:    380px;
     max-width: 520px;
     overflow: hidden;
-    transition:           all 0.6s;
+    transition:    all 0.6s;
     background-color: $text;
 }
 
@@ -118,7 +120,7 @@ nav {
         border:             none;
         font-size:          12px;
         margin: 12px 0 12px 62px;
-        color: white;
+        color:           white;
     }
 }
 
@@ -131,11 +133,11 @@ button {
     margin:         18px;
     transition: all 0.3s;
     background-color:      $dark-brand;
-    border: 2px solid $light-brand;
-    color:         $light-brand;
+    border:     2px solid $light-brand;
+    color:                $light-brand;
 
     &:hover {
-        color: $dark-brand;
+        color:             $dark-brand;
         background-color: $light-brand;
     }
 }
@@ -143,31 +145,31 @@ button {
 // ---- Placeholder Text ---- //
 
 ::-webkit-input-placeholder {
-	color:      $placeholder;
+	color:        $placeholder;
 	text-transform: capitalize;
 }
 
 :-moz-placeholder {
-	color:      $placeholder;
+	color:        $placeholder;
 	text-transform: capitalize;
 	opacity: 	             1;
 }
 
 ::-moz-placeholder {
-	color:      $placeholder;
+	color:        $placeholder;
 	text-transform: capitalize;
 	opacity: 	 		     1;
 }
 
 :-ms-input-placeholder {
-	color:      $placeholder;
+	color:        $placeholder;
 	text-transform: capitalize;
 }
 
 .cancel {
-    width: 100%; 
+    width:        100%; 
     text-align: center;
-    margin: 0 auto;
+    margin:     0 auto;
 }
 
 /*----------  Main Body  ----------*/
@@ -187,9 +189,9 @@ ul {
 .list-item {
     display: flex;
     height:  auto;
-    flex-direction:      column;
-    justify-content: flex-start;
-    border-left: 1px solid $hover;
+    flex-direction:         column;
+    justify-content:    flex-start;
+    border-left:  1px solid $hover;
     border-right: 1px solid $hover;
 }
 
@@ -200,11 +202,11 @@ li:nth-last-child(1) {border-bottom: 1px solid $hover}
 .list-item:hover {background-color: $hover}
 
 .outer {
-    max-width:    520px;
-    margin:  0 auto;
-    display:   flex;
-    height:    80px;
-    cursor: pointer;
+    max-width: 520px;
+    margin:   0 auto;
+    display:    flex;
+    height:     80px;
+    cursor:  pointer;
     align-items:          center;
     padding:        0 8px 0 18px;
 	transition: margin 0.8s ease;

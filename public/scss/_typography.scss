@@ -27,18 +27,16 @@ p {
     opacity:     0.8;
 }
 
-a{
-    color: white;
-}
+a{color: white}
 
 a:hover {
 	color: lighten($light-brand, 10);
 }
 
 .i-large {
-    font-size:          2.2rem;
-    color: white;
-    padding: 2px 14px 0px 10px;
+    font-size: 2.2rem;
+    color:    white;
+    padding: 2px 14px 2px 14px;
 }
 
-i:hover {color: $light-brand;}
+i:hover {color: $light-brand}

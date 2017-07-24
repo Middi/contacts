@@ -79,7 +79,7 @@ a:hover {
 .i-large {
   font-size: 2.2rem;
   color: white;
-  padding: 2px 14px 0px 10px; }
+  padding: 2px 14px 2px 14px; }
 
 i:hover {
   color: #fcfcfc; }
@@ -100,13 +100,16 @@ nav {
   display: flex;
   align-content: center;
   padding: 0 8px 0 18px;
-  justify-content: space-between;
-  background-color: #f26959; }
+  background-color: #f26959;
+  justify-content: space-between; }
 
-.nav-left, .nav-right {
+.nav-left, .nav-right, .logo {
   height: 94px;
   display: flex;
   align-items: center; }
+
+.logo {
+  height: 90px; }
 
 .container-nav, .container {
   max-width: 520px;
