@@ -68,8 +68,8 @@ nav {
 	font-size: 		 22px;
 	font-weight: 	  400;
     border-radius:   25px;
-	padding:   	 2px 20px 2px 20px;
-    background-color: $light-brand;
+	padding:   	     2px 20px 2px 20px;
+    background-color:     $light-brand;
 	transition: width 0.4s ease-in-out;
     border:     2px solid $light-brand;
 
@@ -195,8 +195,8 @@ ul {
     border-right: 1px solid $hover;
 }
 
-li:nth-child(odd)  {background: $brand}
-li:nth-child(even) {background: $light-brand}
+li:nth-child(odd)    {background: $brand}
+li:nth-child(even)   {background: $light-brand}
 li:nth-last-child(1) {border-bottom: 1px solid $hover}
 
 .list-item:hover {background-color: $hover}
