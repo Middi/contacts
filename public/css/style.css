@@ -59,7 +59,7 @@ input, select {
 h1 {
   color: #fcfcfc;
   font-weight: 300;
-  font-size: 2.8rem; }
+  font-size: 2rem; }
 
 h2 {
   font-size: 1.4rem;
@@ -67,8 +67,7 @@ h2 {
 
 p {
   color: #4e4e4e;
-  font-weight: 300;
-  opacity: 0.8; }
+  font-weight: 300; }
 
 a {
   color: white; }
@@ -84,6 +83,10 @@ a:hover {
 i:hover {
   color: #fcfcfc; }
 
+a[href^=tel] {
+  color: inherit;
+  text-decoration: none; }
+
 /*----------  Styles  ----------*/
 body {
   background-color: #ebebeb; }
@@ -91,28 +94,28 @@ body {
 /*----------  Nav  ----------*/
 nav, .list-item {
   margin: 0 auto;
-  max-width: 520px;
+  max-width: 480px;
   transition: all 0.6s;
   background-color: #fcfcfc; }
 
 nav {
-  height: 100px;
+  height: 72px;
   display: flex;
+  padding: 0 8px;
   align-content: center;
-  padding: 0 8px 0 18px;
   background-color: #f26959;
   justify-content: space-between; }
 
 .nav-left, .nav-right, .logo {
-  height: 94px;
+  height: 72px;
   display: flex;
   align-items: center; }
 
 .logo {
-  height: 90px; }
+  height: 72px; }
 
 .container-nav, .container {
-  max-width: 520px;
+  max-width: 480px;
   margin: 0 auto;
   border-left: 1px solid #f26959;
   border-right: 1px solid #f26959; }
@@ -122,17 +125,17 @@ nav {
 #add-bar {
   margin: 0 auto;
   height: 380px;
-  max-width: 520px;
+  width: 100%;
   overflow: hidden;
+  padding: 10px;
   transition: all 0.6s;
   background-color: #f26959; }
 
 #add-form {
-  max-width: 460px;
   text-align: center;
   margin: 10px auto 10px; }
   #add-form input[type=text] {
-    width: 360px;
+    width: 75%;
     border: none;
     font-size: 16px;
     font-weight: 400;
@@ -171,23 +174,23 @@ button {
 #search-bar {
   margin: 0 auto;
   height: 96px;
-  max-width: 520px;
+  max-width: 480px;
   text-align: center;
   overflow: hidden;
   transition: all 0.6s;
-  padding: 30px 0;
+  padding: 30px 50px;
   background-color: #fcfcfc;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
   border-bottom: 1px solid #dddddd; }
 
 #search-bar > input[type=text] {
-  width: 440px;
+  width: 100%;
   border: none;
   font-size: 20px;
   font-weight: 400;
   border-radius: 25px;
-  padding: 2px 20px 2px 20px;
+  padding: 2px 20px;
   background-color: #fcfcfc;
   transition: width 0.4s ease-in-out;
   border: 1px solid #b4b4b4; }
@@ -225,7 +228,7 @@ button {
 /*----------  Main Body  ----------*/
 main {
   height: 100vh;
-  max-width: 520px;
+  max-width: 480px;
   margin: 0 auto;
   background-color: #fcfcfc; }
 
@@ -255,7 +258,7 @@ li:nth-last-child(1) {
   background-color: #dddddd; }
 
 .outer {
-  max-width: 520px;
+  max-width: 480px;
   margin: 0 auto;
   display: flex;
   height: 80px;
@@ -276,6 +279,9 @@ li:nth-last-child(1) {
   flex-direction: column;
   justify-content: center;
   padding: 0 22px 8px 22px; }
+  .li-text p {
+    color: #4e4e4e;
+    font-weight: 300; }
 
 .flag {
   align-self: center;
