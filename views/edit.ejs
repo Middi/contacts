@@ -1,4 +1,6 @@
+<!-- Header Partial -->
 <% include ./partials/header-edit %>
+
         <ul id="contacts-ul">
             <% contact.forEach(function(contact) { %>
                 <li class="list-item">
@@ -6,6 +8,7 @@
                         <div class="avatar">
                             <img src="<%= contact.avatar %>">
                         </div>
+                        <!-- Main Contacts Text -->
                         <div class="li-text">
                             <h2><%= contact.firstName %> <%= contact.lastName %></h2>
                             <p><%= contact.number %></p>
@@ -14,14 +17,21 @@
                             <span class="flag-icon flag-icon-gb"></span>
                         </div>
                     </div>
+                    
+                    <!-- Edit Delete Dropdown -->
                     <div class="action hide">
-                        <button class="edit" data="<%= contact._id %>">edit</button>
-                        <form class="delete-form" action="/<%= contact._id %>?_method=DELETE" method="POST">
+
+                        <form class="edit-form" action="/<%= contact._id %>" method="GET">
+                            <button class="edit">edit</button>
+                        </form>
+
+                        <form class="delete-form" action="<%= contact._id %>?_method=DELETE" method="POST">
                             <button>delete</button>
                         </form>
                     </div>
                 </li>  
              <% }); %>
         </ul>
-        
+
+<!-- Footer Partial -->
 <% include ./partials/footer %>
