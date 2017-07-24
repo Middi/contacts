@@ -54,12 +54,16 @@ nav {
 
 #search-bar {
     margin:       0 auto;
-    height:         80px;
+    height:        100px;
     max-width:     520px;
     text-align:   center;
     overflow:     hidden;
     transition: all 0.6s;
-    background-color: $text;
+    padding: 30px 0;
+    background-color: $light-brand;
+    border-left:  1px solid $hover;
+    border-right: 1px solid $hover;
+    
 }
 
 #search-bar > input[type=text] {
@@ -71,7 +75,7 @@ nav {
 	padding:   	     2px 20px 2px 20px;
     background-color:     $light-brand;
 	transition: width 0.4s ease-in-out;
-    border:     2px solid $light-brand;
+    border:     1px solid $text;
 
     &:focus {
         outline:      none;

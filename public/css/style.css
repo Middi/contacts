@@ -121,12 +121,15 @@ nav {
 /*---  Searchbar ---*/
 #search-bar {
   margin: 0 auto;
-  height: 80px;
+  height: 100px;
   max-width: 520px;
   text-align: center;
   overflow: hidden;
   transition: all 0.6s;
-  background-color: #f26959; }
+  padding: 30px 0;
+  background-color: #fcfcfc;
+  border-left: 1px solid #dddddd;
+  border-right: 1px solid #dddddd; }
 
 #search-bar > input[type=text] {
   max-width: 400px;
@@ -137,7 +140,7 @@ nav {
   padding: 2px 20px 2px 20px;
   background-color: #fcfcfc;
   transition: width 0.4s ease-in-out;
-  border: 2px solid #fcfcfc; }
+  border: 1px solid #f26959; }
   #search-bar > input[type=text]:focus {
     outline: none;
     color: #f26959;
