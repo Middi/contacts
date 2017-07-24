@@ -26,6 +26,9 @@ p {
     opacity:     0.8;
 }
 
+a:hover {
+	color: darken($text, 10);
+}
 .i-large {
     font-size:          2.2rem;
 	color:   darken($text, 10);
