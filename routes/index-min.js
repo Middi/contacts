@@ -99,9 +99,9 @@ router.get("/:id", function(req, res){
 
 // Update Campground
 // TODO: must add update object
-router.post("/edit/:id", upload.single('avatar'), function(req, res){
-  const { firstName, lastName, country, avatar, number } = req.body
-    Contact.findByIdAndUpdate(req.params.id, { firstName, lastName, country, avatar, number }, function(err, updatedContact){
+router.post("/edit/:id", function(req, res){
+  const { firstName, lastName, country, number } = req.body
+    Contact.findByIdAndUpdate(req.params.id, { firstName, lastName, country, number }, function(err, updatedContact){
     if(err){
             res.send('error updating');
         }
