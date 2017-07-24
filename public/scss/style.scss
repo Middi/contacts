@@ -127,8 +127,8 @@ nav {
 #file {padding: 20px 0 0 0}
 
 button {
-    padding:    6px 26px;
-    font-size:      16px;
+    padding:    6px 22px;
+    font-size:      14px;
     border-radius:  10px;
     margin:         18px;
     transition: all 0.3s;
@@ -238,13 +238,13 @@ li:nth-last-child(1) {border-bottom: 1px solid $hover}
 
 .action {
     text-align: center;
-    height:       80px;
+    height:       70px;
     overflow:   hidden;
     background-color: $dark-brand;
 
     button {
-        padding:      6px 18px;
-        font-size:        16px;
+        padding:      4px 14px;
+        font-size:        14px;
         border-radius:     6px;
         transition:   all 0.3s;
         color:  $lighter-brand;
