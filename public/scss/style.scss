@@ -250,6 +250,8 @@ li:nth-last-child(1) {border-bottom: 1px solid $hover}
         font-size:      0.8rem;
         border-radius:     6px;
         transition:   all 0.3s;
+        margin-left: 16px;
+        margin-right: 16px;
         color:  $lighter-brand;
         background-color:    $dark-brand;
         border: 1px solid $lighter-brand;
