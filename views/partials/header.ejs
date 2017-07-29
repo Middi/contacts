@@ -14,7 +14,7 @@
 
     <!-- Local CSS -->
     <link href="/css/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                     <div class="logo">
                         <a href="/"><h1>Contacts</h1></a>
                     </div>
-                    
+
                     <!-- Add Contact Button -->
                     <div class="nav-right">
                         <div id="add">
@@ -53,7 +53,11 @@
                 <input class="first-name" type="text" name="firstName" placeholder="First Name">
                 <input class="last-name" type="text" name="lastName" placeholder="Last Name">
                 <input class="number" type="tel" name="number" placeholder="Number">
-                <input class="country" type="text" name="country" placeholder="Country">
+                <select class="country" name="country" placeholder="Country">
+                  <% countries.forEach(function(country) { %>
+                    <option value="<%= country %>"><%= country %></option>
+                  <% }); %>
+                </select>
                 <input class="file" type="file" name="avatar" placeholder="Image">
 
                 <button>Submit</button>

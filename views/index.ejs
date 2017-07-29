@@ -3,24 +3,24 @@
 
         <!-- Contacts UL -->
         <ul id="contacts-ul">
-        
+
             <% contact.forEach(function(contact) { %>
                 <li class="list-item">
                     <div class="outer">
                         <div class="avatar">
                             <img src="<%= contact.avatar %>">
                         </div>
-                        
+
                         <!-- Main Contacts Text -->
                         <div class="li-text">
                             <h2><%= contact.firstName %> <%= contact.lastName %></h2>
                             <p><%= contact.number %></p>
                         </div>
                         <div class="flag">
-                            <span class="flag-icon flag-icon-gb"></span>
+                            <span class="flag-icon flag-icon-<%= contact.code %>"></span>
                         </div>
                     </div>
-                    
+
                     <!-- Edit Delete Dropdown -->
                     <div class="action hide">
 
@@ -33,7 +33,7 @@
                         </form>
 
                     </div>
-                </li>  
+                </li>
              <% }); %>
         </ul>
 
