@@ -306,8 +306,9 @@ li:nth-last-child(1) {
 
 .edit-avatar {
   margin: 0 auto;
-  width: 100%;
-  text-align: center; }
+  width: 82px;
+  text-align: center;
+  border-radius: 100%; }
   .edit-avatar img {
     width: 80px;
     height: 80px;
