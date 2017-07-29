@@ -1,7 +1,8 @@
 var path = require('path')
 var cloudinary = require('cloudinary');
 var Datauri = require('datauri');
-var countries = require('country-data').countries;
+var lookup = require('country-data').lookup;
+var countryNames = require('country-data').countries.all
 var express = require("express");
 var router = express.Router();
 var multer = require('multer');
@@ -14,6 +15,8 @@ var _ = require('lodash');
 // File Name extension for Multer
 var ext = "";
 var upload = multer();
+
+const countries = countryNames.map(country => country.name)
 
 // TODO: Create an account and replace these values with yours
 // Probably a good idea to store these in an .env file
@@ -29,16 +32,21 @@ cloudinary.config({
 // INDEX ROUTE Show all contacts
 router.get('/', function(req, res){
     //get contacts from DB
-    Contact.find({}, function(err, allContacts){
-        if(err){
-            console.log(err);
+    Contact.find({}).lean().exec(function(err, allContacts) {
+      if (err) return res.send({ err: err })
+
+      const processedContacts = allContacts.map(function(contact, i) {
+        // TODO: sanitize data and ensure it is capitalized properly for lookup
+        if (lookup.countries({ name: contact.country }).length === 0) {
+          contact.code = 'pl'
+        } else {
+          contact.code = lookup.countries({ name: contact.country })[0].alpha2.toLowerCase()
         }
-        else {
-            res.render('index', {
-                contact: allContacts
-            });
-        }
-    });
+        return contact
+      })
+
+      res.render('index', { contact: processedContacts, countries: countries });
+    })
 });
 
 
@@ -60,7 +68,7 @@ router.post('/', upload.single('avatar'), function (req, res, next){
         country: country,
         avatar: results.url
       };
-      
+
       Contact.create(newContact, function(err, newlyCreated){
           if(err) {
               console.log(err);
@@ -78,8 +86,9 @@ router.get("/:id", function(req, res){
    Contact.find({}, function(err, allContacts){
         Contact.findById(req.params.id, function(err, contactUser){
         if(err){
-            res.send('error editing');
+            return res.send('error editing');
         }
+
         res.render('edit', {
             contactUser: contactUser,
             contact: allContacts
