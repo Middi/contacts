@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-  $(document).tooltip();
-
   // ===========================
   // Search bar reveal
   // ===========================
@@ -115,5 +113,9 @@ $(document).ready(function () {
 
 });
 
+// ===========================
+// ToolTips
+// ===========================
 
+$(document).tooltip();
 
