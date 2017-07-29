@@ -39,7 +39,8 @@ router.get('/', function(req, res){
         // TODO: sanitize data and ensure it is capitalized properly for lookup
         if (lookup.countries({ name: contact.country }).length === 0) {
           contact.code = 'pl'
-        } else {
+        } 
+        else {
           contact.code = lookup.countries({ name: contact.country })[0].alpha2.toLowerCase();
         }
         return contact
