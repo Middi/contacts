@@ -53,10 +53,11 @@
                 <input class="first-name" type="text" name="firstName" placeholder="First Name">
                 <input class="last-name" type="text" name="lastName" placeholder="Last Name">
                 <input class="number" type="tel" name="number" placeholder="Number">
-                <select class="country" name="country" placeholder="Country">
-                  <% countries.forEach(function(country) { %>
-                    <option value="<%= country %>"><%= country %></option>
-                  <% }); %>
+                <select class="country" name="country">
+                    <option value="" selected disabled hidden>Select Country</option>
+                        <% countries.forEach(function(country) { %>
+                            <option value="<%= country %>"><%= country %></option>
+                        <% }); %>
                 </select>
                 <input class="file" type="file" name="avatar" placeholder="Image">
 

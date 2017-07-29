@@ -67,7 +67,7 @@ nav {
     text-align:     center;
     margin: 10px auto 10px;
     
-    input[type=text], input[type=tel] {
+    input[type=text], input[type=tel], select {
 	    width: 		    75%;
         border: 	   none;
         font-size: 	   1rem;
@@ -92,6 +92,7 @@ nav {
         margin: 12px 0 12px 62px;
     }
 }
+
 
 .file {padding: 20px 0 0 0}
 
@@ -232,8 +233,7 @@ li:nth-last-child(1) {border-bottom: 1px solid $hover}
 
 .flag {
     align-self:   center;
-    padding:       0 8px;
-    margin: 0px auto 4px;
+    margin: 0px 8px 4px;
 }
 
 

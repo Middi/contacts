@@ -32,7 +32,7 @@ cloudinary.config({
 // INDEX ROUTE Show all contacts
 router.get('/', function(req, res){
     //get contacts from DB
-    Contact.find({}).lean().exec(function(err, allContacts) {
+    Contact.find({}).sort({ firstName: 1 }).lean().exec(function(err, allContacts) {
       if (err) return res.send({ err: err });
 
       const processedContacts = allContacts.map(function(contact, i) {
@@ -86,31 +86,28 @@ router.get("/:id", function(req, res){
 
 
     //get contacts from DB
-    Contact.find({}).lean().exec(function(err, allContacts) {
+    Contact.find({}).sort({ firstName: 1 }).lean().exec(function(err, allContacts) {
 
 
         Contact.findById(req.params.id, function(err, contactUser){
-        if(err){
-            return res.send('error editing');
-        }
-        
-      if (err) return res.send({ err: err });
+            if(err){
+                return res.send('error editing');
+            }
 
-      const processedContacts = allContacts.map(function(contact, i) {
-        // TODO: sanitize data and ensure it is capitalized properly for lookup
-        if (lookup.countries({ name: contact.country }).length === 0) {
-          contact.code = 'pl'
-        } else {
-          contact.code = lookup.countries({ name: contact.country })[0].alpha2.toLowerCase();
-        }
-        return contact
-      });
+        if (err) return res.send({ err: err });
 
-      res.render('edit', { contact: processedContacts, countries: countries, contactUser: contactUser });
-    });
-
-
-
+        const processedContacts = allContacts.map(function(contact, i) {
+            // TODO: sanitize data and ensure it is capitalized properly for lookup
+            if (lookup.countries({ name: contact.country }).length === 0) {
+            contact.code = 'pl'
+            } else {
+            contact.code = lookup.countries({ name: contact.country })[0].alpha2.toLowerCase();
+            }
+            return contact
+        });
+    
+          res.render('edit', { contact: processedContacts, countries: countries, contactUser: contactUser });
+        });
 
       });
 

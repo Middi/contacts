@@ -137,7 +137,7 @@ nav {
 #add-form {
   text-align: center;
   margin: 10px auto 10px; }
-  #add-form input[type=text], #add-form input[type=tel] {
+  #add-form input[type=text], #add-form input[type=tel], #add-form select {
     width: 75%;
     border: none;
     font-size: 1rem;
@@ -148,7 +148,7 @@ nav {
     background-color: #fcfcfc;
     transition: width 0.4s ease-in-out;
     border: 2px solid #f26959; }
-    #add-form input[type=text]:focus, #add-form input[type=tel]:focus {
+    #add-form input[type=text]:focus, #add-form input[type=tel]:focus, #add-form select:focus {
       outline: none;
       background-color: white; }
   #add-form input[type=file] {
@@ -279,8 +279,7 @@ li:nth-last-child(1) {
 
 .flag {
   align-self: center;
-  padding: 0 8px;
-  margin: 0px auto 4px; }
+  margin: 0px 8px 4px; }
 
 /*----------  Action Div  ----------*/
 .action {
