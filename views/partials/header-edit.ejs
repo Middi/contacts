@@ -57,7 +57,13 @@
                         <input class="first-name" type="text" name="firstName" value="<%= contactUser.firstName %>" placeholder="First Name">
                         <input class="last-name" type="text" name="lastName" value="<%= contactUser.lastName %>" placeholder="Last Name">
                         <input class="number" type="tel" name="number" value="<%= contactUser.number %>" placeholder="Number">
-                        <input class="country" type="text" name="country" value="<%= contactUser.country %>" placeholder="Country">
+                        
+                        <select class="country" name="country" placeholder="Country">
+                            <option value="<%= contactUser.country %>"><%= contactUser.country %></option>
+                            <% countries.forEach(function(country) { %>
+                                <option value="<%= country %>"><%= country %></option>
+                            <% }); %>
+                         </select>
 
                         <button>Submit</button>
                 </form>
