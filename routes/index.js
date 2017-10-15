@@ -5,6 +5,7 @@ var lookup = require('country-data').lookup;
 var countryNames = require('country-data').countries.all
 var express = require("express");
 var router = express.Router();
+const dotenv = require('dotenv');
 var multer = require('multer');
 var passport = require("passport");
 var User = require("../models/user");
@@ -16,15 +17,20 @@ var _ = require('lodash');
 var ext = "";
 var upload = multer();
 
-const countries = countryNames.map(country => country.name)
+const countries = countryNames.map(country => country.name);
+
+/**
+ * Load environment variables from .env file, where API keys and passwords are configured.
+ */
+dotenv.load({ path: '.env' });
 
 // TODO: Create an account and replace these values with yours
 // Probably a good idea to store these in an .env file
 // Look up the dontenv package on npm for more details
 cloudinary.config({
-  cloud_name: 'middi',
-  api_key: '963882663421214',
-  api_secret: 'F4p7vxCEa-ts7SCLx8Y1iCeJEMA'
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
 

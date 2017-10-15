@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var multer  = require('multer');
 var countries = require('country-data').countries;
+const dotenv = require('dotenv');
 var upload = multer({ dest: 'uploads/' });
 var app = express();
 var mongoose = require('mongoose');
@@ -18,12 +19,18 @@ var User = require("./models/user");
 // =====================
 var routes = require("./routes/index");
 
+
+/**
+ * Load environment variables from .env file, where API keys and passwords are configured.
+ */
+dotenv.load({ path: '.env' });
+
 var port = process.env.PORT || 4000;
 
 
 // APP CONFIG
 // TODO: put this is a .env file
-mongoose.connect("mongodb://Middi:youandme123@ds161022.mlab.com:61022/contacts");
+mongoose.connect(process.env.MONGO_URL);
 
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, 'views'))
